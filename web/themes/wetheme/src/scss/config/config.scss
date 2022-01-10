@@ -1,0 +1,45 @@
+// 	========================
+//  CONFIG
+//  ========================
+//
+//  ========================
+//  Font
+//  ========================
+//
+
+$font: "Sora", Arial, "Helvetica Neue", Helvetica, sans-serif;
+$font-size: 16px;
+
+//
+// ========================
+// Colors
+// ========================
+//
+// Brand colors
+
+$color-primary: #0C6CDC;
+$color-secondary: #009CDE;
+
+$color-bg: #fff;
+
+$color-text: #00171F;
+$color-link: $color-primary;
+
+// Borders
+$border-default: #F0F3F3;
+
+$input-border: #E6EFF3;
+$input-border-focus: #009CDE;
+
+// Messages colors
+$error-color: #ff0000;
+$warning-color: #F0C808;
+$success-color: #00BB4A;
+
+// Basic colors
+$color-white: #fff;
+$color-black: #00171F;
+$color-red: $error-color;
+$color-yellow: $warning-color;
+$color-green: $success-color;
+$color-grey: #505B5E;

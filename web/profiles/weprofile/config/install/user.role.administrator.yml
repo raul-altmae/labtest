@@ -1,0 +1,8 @@
+langcode: et
+status: true
+dependencies: {  }
+id: administrator
+label: Haldur
+weight: 2
+is_admin: true
+permissions: {  }

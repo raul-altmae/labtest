@@ -1,0 +1,109 @@
+name: WE Profile starter kit
+type: profile
+description: 'WE Profile starter kit'
+core_version_requirement: '^8.8 || ^9'
+
+# Optional: Declare your installation profile as a distribution
+# This will make the installer auto-select this installation profile.
+# The distribution_name property is used in the installer and other places as
+# a label for the software being installed.
+distribution:
+  name: WE Profile starter kit
+  langcode: et
+
+# Required modules
+# Note that any dependencies of the modules listed here will be installed automatically.
+install:
+  - admin_toolbar
+  - admin_toolbar_links_access_filter
+  - admin_toolbar_tools
+  - better_exposed_filters
+  - block
+  - block_content
+  - breakpoint
+  - captcha
+  - ckeditor
+  - ckeditor_templates
+  - ckeditor_uploadimage
+  - config
+  - config_filter
+  - config_ignore
+  - config_translation
+  - content_translation
+  - contextual
+  - ctools
+  - datetime
+  - dblog
+  - devel
+  - dropzonejs
+  - ds
+  - ds_extras
+  - dynamic_page_cache
+  - editor
+  - embed
+  - entity_reference_revisions
+  - fences
+  - field
+  - field_ui
+  - file
+  - filter
+  - gin_login
+  - google_analytics
+  - image
+  - jquery_ui
+  - jquery_ui_datepicker
+  - jquery_ui_slider
+  - jquery_ui_touch_punch
+  - language
+  - language_switcher_extended
+  - layout_discovery
+  - link
+  - locale
+  - media
+  - media_library
+  - menu_block
+  - menu_link_content
+  - menu_trail_by_path
+  - menu_ui
+  - metatag
+  - node
+  - options
+  - page_cache
+  - paragraphs
+  - path
+  - path_alias
+  - pathauto
+  - rdf
+  - recaptcha
+  - redirect
+  - responsive_image
+  - search_api
+  - search_api_db
+  - select2
+  - simple_sitemap
+  - syslog
+  - system
+  - taxonomy
+  - telephone
+  - text
+  - token
+  - toolbar
+  - twig_tweak
+  - update
+  - user
+  - views
+  - views_ui
+  - webform
+  - webform_ui
+
+# List any themes that should be installed as part of the installation
+# profile installation.
+# Note that this will not set any theme as the default theme.
+themes:
+  - bartik
+  - claro
+  - classy
+  - gin
+  - seven
+  - stable
+  - wetheme

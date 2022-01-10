@@ -1,0 +1,103 @@
+@mixin container {
+  width: 1440px;
+  margin: 0 auto;
+  padding: 0 120px;
+  max-width: 100%;
+}
+
+@mixin fa {
+  font-weight: 900;
+  font-family: "Font Awesome 5 Pro";
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+}
+
+@mixin far {
+  @include fa;
+  font-weight: 400;
+}
+
+@mixin fal {
+  @include fa;
+  font-weight: 500;
+}
+
+@mixin fab {
+  @include fa;
+  font-family: "Font Awesome 5 Brands";
+  font-weight: 400;
+}
+
+@mixin button {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: top;
+  background: none;
+  border: 0;
+  color: inherit;
+  font: inherit;
+  line-height: normal;
+  overflow: visible;
+  padding: 0;
+  cursor: pointer;
+  appearance: none;
+  text-decoration: none;
+  transition: 200ms ease;
+}
+
+@mixin content {
+  strong {
+    font-weight: 700;
+  }
+
+  em {
+    font-style: italic;
+  }
+
+  .text-align-center {
+    text-align: center;
+  }
+
+  .text-align-right {
+    text-align: right;
+  }
+
+  .text-align-left {
+    text-align: left;
+  }
+
+  .text-align-justify {
+    text-align: justify;
+  }
+
+  img,
+  figure {
+    &.align-left {
+      float: left;
+    }
+
+    &.align-right {
+      float: right;
+    }
+
+    &.align-center {
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+
+    th {
+      text-align: left;
+    }
+  }
+}

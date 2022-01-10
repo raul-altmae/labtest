@@ -1,0 +1,12 @@
+@import url('../assets/@fortawesome/fontawesome-pro/css/all.css');
+
+body {
+  @include content;
+}
+
+.cke_panel_listItem {
+  a {
+    display: block !important;
+    text-decoration: none !important;
+  }
+}

@@ -1,0 +1,5 @@
+name: WE Search block
+type: module
+description: Custom search block
+core_version_requirement: '^8.8 || ^9'
+package: 'Web Expert'

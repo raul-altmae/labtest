@@ -1,0 +1,58 @@
+// Usage Snippet:
+// @include bp(480) {
+//
+// }
+
+@mixin bp($size) {
+  @if $size == 480 {
+    @media (min-width: 480px) {
+      @content;
+    }
+  } @else if $size == 768 {
+    @media (min-width: 768px) {
+      @content;
+    }
+  } @else if $size == 992 {
+    @media (min-width: 992px) {
+      @content;
+    }
+  } @else if $size == 1280 {
+    @media (min-width: 1280px) {
+      @content;
+    }
+  } @else if $size == 1440 {
+    @media (min-width: 1440px) {
+      @content;
+    }
+  } @else if $size == 1920 {
+    @media (min-width: 1920px) {
+      @content;
+    }
+  }
+    // Max-width
+  @else if $size == 479 {
+    @media (max-width: 479px) {
+      @content;
+    }
+  } @else if $size == 767 {
+    @media (max-width: 767px) {
+      @content;
+    }
+  } @else if $size == 991 {
+    @media (max-width: 991px) {
+      @content;
+    }
+  } @else if $size == 1279 {
+    @media (max-width: 1279px) {
+      @content;
+    }
+  } @else if $size == 1439 {
+    @media (max-width: 1439px) {
+      @content;
+    }
+  } @else if $size == 1919 {
+    @media (max-width: 1919px) {
+      @content;
+    }
+  }
+}

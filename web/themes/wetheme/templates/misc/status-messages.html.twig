@@ -1,0 +1,60 @@
+{#
+/**
+ * @file
+ * Theme override for status messages.
+ *
+ * Displays status, error, and warning messages, grouped by type.
+ *
+ * An invisible heading identifies the messages for assistive technology.
+ * Sighted users see a colored box. See http://www.w3.org/TR/WCAG-TECHS/H69.html
+ * for info.
+ *
+ * Add an ARIA label to the contentinfo area so that assistive technology
+ * user agents will better describe this landmark.
+ *
+ * Available variables:
+ * - message_list: List of messages to be displayed, grouped by type.
+ * - status_headings: List of all status types.
+ * - display: (optional) May have a value of 'status' or 'error' when only
+ *   displaying messages of that specific type.
+ * - attributes: HTML attributes for the element, including:
+ *   - class: HTML classes.
+ */
+#}
+{{ attach_library('classy/messages') }}
+{% block messages %}
+  {% for type, messages in message_list %}
+    {% set classes = [
+      'messages',
+      'messages--' ~ type,
+    ] %}
+    <div role="contentinfo"
+         aria-label="{{ status_headings[type] }}"{{ attributes.addClass(classes)|without('role', 'aria-label') }}>
+      <span class="fas fa-exclamation-triangle"></span>
+      <div class="messages__body" {% if type == 'error' %}role="alert"{% endif %}>
+        {% if status_headings[type] %}
+          <span class="messages__title">{{ status_headings[type] }}</span>
+        {% endif %}
+
+        <div class="messages__text">
+          {% if messages|length > 1 %}
+            <ul>
+              {% for message in messages %}
+                <li>{{ message }}</li>
+              {% endfor %}
+            </ul>
+          {% else %}
+            <p>{{ messages|first }}</p>
+          {% endif %}
+        </div>
+
+      </div>
+      <div class="messages__buttons">
+        <a href="#" class="button messages__close">{{ 'Close'|t }}</a>
+      </div>
+    </div>
+    {# Remove type specific classes. #}
+    {{ attributes.removeClass(classes) }}
+  {% endfor %}
+{% endblock messages %}
+

@@ -1,0 +1,6 @@
+logo:
+  use_default: 1
+brand_image:
+  use_default: 0
+  path: themes/wetheme/images/bo-auth-bg.png
+langcode: et

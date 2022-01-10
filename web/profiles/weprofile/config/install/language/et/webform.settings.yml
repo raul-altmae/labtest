@@ -1,0 +1,16 @@
+settings:
+  default_submit_button_label: Sisesta
+  default_reset_button_label: Tühista
+  default_delete_button_label: Kustuta
+  default_wizard_confirmation_label: Lõpetatud
+  default_preview_next_button_label: Eelvaade
+  default_preview_label: Eelvaade
+  dialog_options:
+    narrow:
+      title: Kitsas
+    normal:
+      title: Tavaline
+    wide:
+      title: Lai
+element:
+  default_more_title: Veel

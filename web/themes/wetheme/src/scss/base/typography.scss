@@ -1,0 +1,35 @@
+html {
+  font-size: $font-size;
+}
+
+body {
+  font-family: $font;
+  color: $color-text;
+  line-height: 30px;
+  font-size: 1rem;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+a:not(.button) {
+  display: inline-block;
+  text-decoration: none;
+  color: $color-link;
+  transition: .2s ease;
+}
+
+strong {
+  font-weight: 700;
+}
+
+em {
+  font-style: italic;
+}
+
+code {
+  font-family: Monospace;
+
+  pre & {
+    display: block;
+  }
+}

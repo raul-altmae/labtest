@@ -1,0 +1,23 @@
+// VISIBILITY
+.hidden,
+.u-hidden,
+.js-hide {
+  display: none !important;
+}
+
+.u-invisible {
+  visibility: hidden !important
+}
+
+.visually-hidden {
+  visibility: hidden;
+  position: absolute;
+  height: 0;
+  width: 0;
+  opacity: 0;
+  overflow: hidden;
+}
+
+.u-container {
+  @include container;
+}

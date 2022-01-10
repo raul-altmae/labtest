@@ -1,0 +1,7 @@
+accessibility:
+  version: 1.x
+  css:
+    theme:
+      css/accessibility.css: {}
+  js:
+    js/accessibility.js: {}

@@ -1,0 +1,7 @@
+langcode: et
+status: true
+dependencies: {  }
+id: footer
+label: Footer
+description: 'Site information links'
+locked: true

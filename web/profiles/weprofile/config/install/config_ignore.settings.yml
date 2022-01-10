@@ -1,0 +1,13 @@
+ignored_config_entities:
+  - 'webform.webform.*'
+  - 'block.block.*'
+  - '*.block.block.*'
+  - 'language.content_settings.webform_submission.*'
+  - 'webform.*'
+  - 'eu_cookie_compliance.*'
+  - system.site
+  - 'metatag.*'
+  - 'captcha.*'
+  - 'recaptcha.*'
+  - 'google_tag.*'
+langcode: et
