@@ -1,0 +1,15 @@
+name: 'Sample Request'
+mail: admin@example.com
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /node
+admin_compact_mode: false
+weight_select_max: 100
+langcode: et
+default_langcode: en
+mail_notification: ''
+_core:
+  default_config_hash: bYGDd5KzCwq0cVhRFUhseAePNeSstlw3ir5Jo3kFhtg
+uuid: ba010248-5f4d-401d-a9ec-fcd1df7ba18c

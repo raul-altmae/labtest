@@ -1,0 +1,20 @@
+uuid: eb34c3a3-7e38-4366-8546-bdcacd258436
+langcode: et
+status: true
+dependencies:
+  theme:
+    - gin
+_core:
+  default_config_hash: wzLzYEHHdpOXOEjV0TzJiilUpk3zqAC4P4_S7I-xQHs
+id: gin_page_title
+theme: gin
+region: header
+weight: -30
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility: {  }

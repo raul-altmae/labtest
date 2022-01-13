@@ -1,0 +1,22 @@
+uuid: 2b5d034c-1da8-4274-b52b-fa2240e239ee
+langcode: et
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - gin
+_core:
+  default_config_hash: 6X3lPvQ3fKsArJq6lzf2QRACf9SpxKnd6W2oeg2s0u4
+id: gin_messages
+theme: gin
+region: highlighted
+weight: 0
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

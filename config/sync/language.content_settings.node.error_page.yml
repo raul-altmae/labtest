@@ -1,0 +1,18 @@
+uuid: ac417425-173b-495c-ba4b-6885c1a3d64f
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.error_page
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+_core:
+  default_config_hash: Gur8taKYLBe1f0e4fj367kU5eg17ci9kT6EIJa4b5ms
+id: node.error_page
+target_entity_type_id: node
+target_bundle: error_page
+default_langcode: site_default
+language_alterable: true

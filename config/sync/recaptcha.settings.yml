@@ -1,0 +1,13 @@
+site_key: ''
+secret_key: ''
+verify_hostname: false
+use_globally: false
+widget:
+  theme: light
+  type: image
+  size: ''
+  tabindex: 0
+  noscript: false
+langcode: et
+_core:
+  default_config_hash: yNz8GHV7j0xcMnyJ_XeeuueO9apirAIN74H2wMcmdrE

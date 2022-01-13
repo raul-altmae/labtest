@@ -1,0 +1,25 @@
+uuid: 45716061-9c1d-4b61-bf66-542f7e86e66d
+langcode: et
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - bartik
+_core:
+  default_config_hash: A96mGkUOQZ9BjfgJNTvtGM-S3sCg7XYhOwDDHd_fkng
+id: bartik_branding
+theme: bartik
+region: header
+weight: 0
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  provider: system
+  label_display: '0'
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: true
+visibility: {  }

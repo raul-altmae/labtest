@@ -1,0 +1,12 @@
+disabled: false
+field_template: false
+ft-default: default
+ft-show-colon: false
+ft-layout-builder: false
+classes:
+  region: {  }
+  field: {  }
+use_field_names: true
+langcode: en
+_core:
+  default_config_hash: qvxrO-SoNzIiwtY9-KwT_cDB5IuUbsMLWf6EBT-NXsQ

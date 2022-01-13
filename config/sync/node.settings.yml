@@ -1,0 +1,4 @@
+use_admin_theme: true
+langcode: en
+_core:
+  default_config_hash: DEUBt73p9NhLmgHiDWFP6gMNIRIqjx4zWMzLMGftf8I

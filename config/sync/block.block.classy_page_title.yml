@@ -1,0 +1,20 @@
+uuid: 94e29887-af22-424e-bcda-511c7c4df092
+langcode: et
+status: true
+dependencies:
+  theme:
+    - classy
+_core:
+  default_config_hash: 1TQP4b3ZnlzvIH9bj6cpCz_SyUHdJjLQkZnHpikjjhw
+id: classy_page_title
+theme: classy
+region: header
+weight: 0
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility: {  }

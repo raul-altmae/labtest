@@ -1,0 +1,16 @@
+uuid: 1a03919a-55cc-4eee-8dd3-440ef33d9ba3
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.editor
+  module:
+    - user
+_core:
+  default_config_hash: MJMQJggw2kjztAYY9JRuIApPp4RZHPU_t_hO9F7z9Kc
+id: user_add_role_action.editor
+label: 'Add the Sisuhaldur role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: editor

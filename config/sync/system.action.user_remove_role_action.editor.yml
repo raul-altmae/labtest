@@ -1,0 +1,16 @@
+uuid: a4c08344-28e9-4301-b1f7-884d090474f0
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.editor
+  module:
+    - user
+_core:
+  default_config_hash: S7baY2Y0rglX7kgxc4-kF0CR_jUoHSWZfltNjQKqVr8
+id: user_remove_role_action.editor
+label: 'Remove the Sisuhaldur role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: editor

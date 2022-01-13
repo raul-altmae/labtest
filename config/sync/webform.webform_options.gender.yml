@@ -1,0 +1,42 @@
+uuid: ca9b0a8d-c6ff-44be-8a83-a788c0056746
+langcode: et
+status: true
+dependencies:
+  enforced:
+    module:
+      - webform
+_core:
+  default_config_hash: Rz3qAGZoOzmL8BYrtk1Qhk9iXLP3vUDpNIraKy9nBCY
+id: gender
+label: Sugu
+category: Demographic
+likert: false
+options: |
+  Man: Man
+  Woman: Woman
+  Non-binary: Non-binary
+  Agender/Genderless: Agender/Genderless
+  Androgyne/Androgynous: Androgyne/Androgynous
+  Aporagender: Aporagender
+  Bigender: Bigender
+  Demi-agender: Demi-agender
+  Demi-boy: Demi-boy
+  Demi-fluid: Demi-fluid
+  Demi-girl: Demi-girl
+  Demi-gender: Demi-gender
+  Demi-non-binary: Demi-non-binary
+  Genderqueer: Genderqueer
+  Genderflux: Genderflux
+  Genderfluid: Genderfluid
+  Gender-indifferent: Gender-indifferent
+  Gender-neutral: Gender-neutral
+  Graygender: Graygender
+  Intergender: Intergender
+  Maverique: Maverique
+  Maxigender: Maxigender
+  Multigender/Polygender: Multigender/Polygender
+  Neutrois: Neutrois
+  Pangender/Omnigender: Pangender/Omnigender
+  Trigender: Trigender
+  Two-spirit: Two-spirit
+  'Prefer Not to Answer': 'Prefer Not to Answer'

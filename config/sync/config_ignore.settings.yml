@@ -1,0 +1,15 @@
+ignored_config_entities:
+  - 'webform.webform.*'
+  - 'block.block.*'
+  - '*.block.block.*'
+  - 'language.content_settings.webform_submission.*'
+  - 'webform.*'
+  - 'eu_cookie_compliance.*'
+  - system.site
+  - 'metatag.*'
+  - 'captcha.*'
+  - 'recaptcha.*'
+  - 'google_tag.*'
+langcode: en
+_core:
+  default_config_hash: 4KVGEBKE4yJ8iR8-OkQU2aWkdw4YV0kJ4q-8C4-_FO4

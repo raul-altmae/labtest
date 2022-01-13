@@ -1,0 +1,13 @@
+uuid: 3fe57d51-8756-42d9-b1f9-9aaa884a9f3f
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+_core:
+  default_config_hash: oo9f9dsyxjrJRmIkJYfB8s8p_Jp59bswR-dNX_51gpE
+id: user_cancel_user_action
+label: 'Cancel the selected user account(s)'
+type: user
+plugin: user_cancel_user_action
+configuration: {  }

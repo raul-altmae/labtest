@@ -1,0 +1,7 @@
+logo:
+  use_default: 1
+brand_image:
+  use_default: 1
+langcode: en
+_core:
+  default_config_hash: MP9gwRLBmU0XpUhOCRP2eJ02jisWx-_5_HjN2ceVM4s

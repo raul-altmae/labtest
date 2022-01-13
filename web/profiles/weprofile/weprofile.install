@@ -22,7 +22,7 @@ function weprofile_install() {
   // Set default theme to wetheme
   \Drupal::configFactory()
     ->getEditable('system.theme')
-    ->set('default', 'wetheme')
+    ->set('default', 'bootstrap')
     ->save();
 
   // Set admin theme to Gin

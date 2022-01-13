@@ -1,0 +1,6 @@
+allow_insecure_uploads: false
+default_scheme: public
+temporary_maximum_age: 21600
+langcode: en
+_core:
+  default_config_hash: JQC7lGstxrE2zF_YqWU_e3psaGNY3CCcUFuhYUCwqUg

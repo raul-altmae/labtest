@@ -1,0 +1,21 @@
+uuid: ccf60333-7b7c-4557-afa4-0275d6d65247
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 8y_S0oG1mlOf15Tz80nQGjOxC60nSf56_2KoAy6jya4
+id: authenticated
+label: 'Autenditud kasutaja'
+weight: 1
+is_admin: false
+permissions:
+  - 'access comments'
+  - 'access content'
+  - 'access shortcuts'
+  - 'access site-wide contact form'
+  - 'opt-in or out of google analytics tracking'
+  - 'post comments'
+  - 'search content'
+  - 'skip comment approval'
+  - 'use text format basic_html'
+  - 'view media'

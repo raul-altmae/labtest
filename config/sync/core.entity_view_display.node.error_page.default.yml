@@ -1,0 +1,32 @@
+uuid: e71eaf4a-f53c-4c90-88ea-8d13a894fbe0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.error_page.body
+    - node.type.error_page
+  module:
+    - text
+    - user
+_core:
+  default_config_hash: '-zeiMAoGoPutGMZhV0_8MXom2lh2oITTQjZPnWWFD-4'
+id: node.error_page.default
+targetEntityType: node
+bundle: error_page
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

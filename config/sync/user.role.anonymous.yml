@@ -1,0 +1,17 @@
+uuid: f74f46f9-a87b-4bcb-bc83-84a0fbd5d6d0
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: e9wBrOwMQaCFFF-jctwN-J6NYUcjldq_ADKhcuY1YnA
+id: anonymous
+label: 'Anonüümne kasutaja'
+weight: 0
+is_admin: false
+permissions:
+  - 'access comments'
+  - 'access content'
+  - 'access site-wide contact form'
+  - 'search content'
+  - 'use text format restricted_html'
+  - 'view media'

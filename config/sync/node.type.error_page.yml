@@ -1,0 +1,19 @@
+uuid: 38a8cd6b-ae6c-478c-aaaa-f5dfde2bda6c
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+_core:
+  default_config_hash: 96Rvi6lhxRF7tw1HPzNA4fBnZp475CoXoR_7TLAmkF4
+name: Vealeht
+type: error_page
+description: ''
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

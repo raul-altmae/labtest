@@ -1,0 +1,32 @@
+label {
+  display: table;
+  font-weight: 1;
+}
+h2 {
+  font-weight: 700;
+}
+.form-item-additional-comments label {
+  font-weight: 700;
+}
+.form-inline {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+.form-item {
+  margin-right:10px;
+}
+.login {
+  float: right;
+}
+.form-actions {
+  margin-top: 10px;
+}
+
+.form-inline .form-text, .form-inline .form-number {
+  width: 100%;
+}
+
+.form-inline label.control-label {
+  margin-bottom: 5px;
+}
