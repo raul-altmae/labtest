@@ -1,0 +1,8 @@
+uuid: 3731cb6c-a18b-4228-bba1-6e76ee48de37
+langcode: en
+status: true
+dependencies: {  }
+name: 'Edge finish'
+vid: edge_finish
+description: ''
+weight: 0

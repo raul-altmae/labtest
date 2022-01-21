@@ -1,0 +1,11 @@
+uuid: 7d087f13-a2bf-48b7-a151-ed67208ab37e
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.order_raised_by
+id: taxonomy_term.order_raised_by
+target_entity_type_id: taxonomy_term
+target_bundle: order_raised_by
+default_langcode: site_default
+language_alterable: false

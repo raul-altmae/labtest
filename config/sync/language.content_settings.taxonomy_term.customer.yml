@@ -1,0 +1,11 @@
+uuid: d1926281-e3ad-41a3-ad9f-8a907f4ea25d
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.customer
+id: taxonomy_term.customer
+target_entity_type_id: taxonomy_term
+target_bundle: customer
+default_langcode: site_default
+language_alterable: false

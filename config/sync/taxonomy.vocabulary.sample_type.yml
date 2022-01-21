@@ -1,0 +1,8 @@
+uuid: aab5aa74-d637-48db-8cc0-6e5914a34313
+langcode: en
+status: true
+dependencies: {  }
+name: 'Sample type'
+vid: sample_type
+description: ''
+weight: 0

@@ -1,0 +1,22 @@
+uuid: 2040672b-863e-4266-89ce-dece090d069d
+langcode: et
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - wetheme
+_core:
+  default_config_hash: cUGDiNKAX09fV0uLHt_x7jXsm8m17q7VdlVG0SdkYjk
+id: wetheme_content
+theme: wetheme
+region: content
+weight: -4
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

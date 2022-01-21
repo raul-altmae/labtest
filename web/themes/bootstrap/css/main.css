@@ -30,3 +30,21 @@ h2 {
 .form-inline label.control-label {
   margin-bottom: 5px;
 }
+
+.form-required:after {
+  background-image: none;
+  background-size: 10px 7px;
+  content: "";
+  display: inline-block;
+  vertical-align: super;
+  line-height: 1;
+  height: 7px;
+  width: 10px;
+}
+
+.navbar {
+  display: block !important;
+  height: auto !important;
+  padding-bottom: 0;
+  overflow: visible !important;
+}

@@ -1,0 +1,11 @@
+uuid: 6c96c186-0db7-466f-9927-da0d213485b7
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.packaging
+id: taxonomy_term.packaging
+target_entity_type_id: taxonomy_term
+target_bundle: packaging
+default_langcode: site_default
+language_alterable: false

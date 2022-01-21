@@ -1,0 +1,11 @@
+uuid: 3eaf951b-c161-40ce-b94f-107515e8dcfd
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.stitch_direction
+id: taxonomy_term.stitch_direction
+target_entity_type_id: taxonomy_term
+target_bundle: stitch_direction
+default_langcode: site_default
+language_alterable: false

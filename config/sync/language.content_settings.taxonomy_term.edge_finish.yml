@@ -1,0 +1,11 @@
+uuid: bdb1921e-7c78-449a-9cc2-bc2778dcf668
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.edge_finish
+id: taxonomy_term.edge_finish
+target_entity_type_id: taxonomy_term
+target_bundle: edge_finish
+default_langcode: site_default
+language_alterable: false

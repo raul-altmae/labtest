@@ -1,0 +1,20 @@
+uuid: bb323e57-4989-44a1-bf7c-4f087451189a
+langcode: et
+status: true
+dependencies:
+  theme:
+    - wetheme
+_core:
+  default_config_hash: wzLzYEHHdpOXOEjV0TzJiilUpk3zqAC4P4_S7I-xQHs
+id: wetheme_page_title
+theme: wetheme
+region: header
+weight: -2
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility: {  }

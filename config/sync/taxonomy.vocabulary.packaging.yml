@@ -1,0 +1,8 @@
+uuid: b8b312c2-be7a-4ff4-ba07-a1c6386e76fe
+langcode: en
+status: true
+dependencies: {  }
+name: Packaging
+vid: packaging
+description: ''
+weight: 0

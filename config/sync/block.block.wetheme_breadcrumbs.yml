@@ -1,0 +1,22 @@
+uuid: 29d0908f-c1de-4f00-b6f3-04862922b384
+langcode: et
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - wetheme
+_core:
+  default_config_hash: V9GNmZFgU-1oGQJT2bmvidiTpdhphV7sjPBLr10Nwf8
+id: wetheme_breadcrumbs
+theme: wetheme
+region: header
+weight: 2
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility: {  }

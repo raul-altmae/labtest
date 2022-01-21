@@ -1,0 +1,22 @@
+uuid: c73bf581-1a2a-4a82-a5d7-195525128a0d
+langcode: et
+status: true
+dependencies:
+  theme:
+    - wetheme
+_core:
+  default_config_hash: X0Tk1u9SPzLJqM0VebwE9dsiDgtI0mxeBhIcc4geSCU
+id: wetheme_secondary_local_tasks
+theme: wetheme
+region: header
+weight: 0
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Secondary tabs'
+  provider: core
+  label_display: '0'
+  primary: false
+  secondary: true
+visibility: {  }

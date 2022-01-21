@@ -1,0 +1,8 @@
+uuid: fd6b2656-1c39-460d-bc53-6e67b5226405
+langcode: en
+status: true
+dependencies: {  }
+name: 'Stitch direction'
+vid: stitch_direction
+description: ''
+weight: 0

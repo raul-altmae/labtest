@@ -1,0 +1,25 @@
+uuid: 7f8b60ac-6c38-457c-8beb-44c83e4e0bf7
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - material_base
+_core:
+  default_config_hash: belB9UdFC7tJtOCSD_Nseupv3qTuUUMdibNQcx9h8Q0
+id: material_base_branding
+theme: material_base
+region: navbar
+weight: -6
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  provider: system
+  label_display: '0'
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: true
+visibility: {  }

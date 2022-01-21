@@ -1,0 +1,383 @@
+uuid: 788ccbc8-1b4b-4895-9a2c-f224cc37f0b7
+langcode: en
+status: open
+dependencies: {  }
+open: null
+close: null
+weight: 0
+uid: 1
+template: false
+archive: false
+id: sample_request
+title: 'Sample Request'
+description: ''
+category: ''
+elements: |-
+  flexbox:
+    '#type': webform_flexbox
+    container_left:
+      '#type': container
+      order_number:
+        '#type': number
+        '#title': 'Order number'
+        '#title_display': inline
+        '#readonly': true
+        '#required': true
+        '#min': 0
+        '#step': 1
+      order_date:
+        '#type': date
+        '#title': 'Order date'
+        '#title_display': inline
+        '#required': true
+        '#default_value': today
+        '#date_date_format': ''
+      order_raised_by:
+        '#type': webform_term_select
+        '#title': 'Order raised by'
+        '#title_display': inline
+        '#required': true
+        '#vocabulary': order_raised_by
+        '#breadcrumb_delimiter': ''
+        '#depth': 1
+      required_date_of_arrival:
+        '#type': date
+        '#title': 'Required date of arrival'
+        '#title_display': inline
+        '#required': true
+        '#date_date_format': ''
+      sample_type:
+        '#type': webform_term_select
+        '#title': 'Sample type'
+        '#title_display': inline
+        '#required': true
+        '#vocabulary': sample_type
+        '#breadcrumb_delimiter': ''
+        '#depth': 1
+    container_right:
+      '#type': container
+      customer:
+        '#type': webform_term_select
+        '#title': Customer
+        '#title_display': inline
+        '#required': true
+        '#vocabulary': customer
+        '#breadcrumb_delimiter': ''
+        '#depth': 1
+      product:
+        '#type': webform_term_select
+        '#title': Product
+        '#title_display': inline
+        '#required': true
+        '#vocabulary': product
+        '#breadcrumb_delimiter': ''
+        '#depth': 1
+      product_ref:
+        '#type': textfield
+        '#title': 'Product ref'
+        '#title_display': inline
+        '#required': true
+      product_code:
+        '#type': textfield
+        '#title': 'Product code'
+        '#title_display': inline
+        '#required': true
+      prf_number:
+        '#type': textfield
+        '#title': 'PRF number'
+        '#title_display': inline
+      number_of_units:
+        '#type': number
+        '#title': 'Number of units'
+        '#title_display': inline
+        '#required': true
+        '#min': 0
+  sample_spec:
+    '#type': fieldset
+    '#title': 'Sample spec'
+    flexbox_sample:
+      '#type': webform_flexbox
+      container_left_sample:
+        '#type': container
+        size:
+          '#type': webform_term_select
+          '#title': Size
+          '#title_display': inline
+          '#required': true
+          '#vocabulary': size
+          '#breadcrumb_delimiter': ''
+          '#depth': 1
+        tog_weight:
+          '#type': textfield
+          '#title': 'Tog / Weight'
+          '#title_display': inline
+          '#required': true
+        edge_finishing:
+          '#type': webform_term_select
+          '#title': 'Edge finishing'
+          '#title_display': inline
+          '#required': true
+          '#vocabulary': edge_finish
+          '#breadcrumb_delimiter': ''
+          '#depth': 1
+        cover_fabric_tick_shell:
+          '#type': textfield
+          '#title': 'Cover fabric/tick/shell'
+          '#title_display': inline
+          '#required': true
+        filling_fibres_and_:
+          '#type': textfield
+          '#title': 'Filling (fibres and %)'
+          '#title_display': inline
+          '#required': true
+      container_right_sample:
+        '#type': container
+        care_label:
+          '#type': textfield
+          '#title': 'Care label'
+          '#title_display': inline
+          '#required': true
+        care_label_code:
+          '#type': textfield
+          '#title': 'Care label code'
+          '#title_display': inline
+          '#required': true
+        stitch_pattern:
+          '#type': webform_term_select
+          '#title': 'Stitch pattern'
+          '#title_display': inline
+          '#required': true
+          '#vocabulary': stitch_pattern
+          '#breadcrumb_delimiter': ''
+          '#depth': 1
+        needle_spacing:
+          '#type': webform_term_select
+          '#title': 'Needle spacing'
+          '#title_display': inline
+          '#required': true
+          '#vocabulary': needle_spacing
+          '#breadcrumb_delimiter': ''
+          '#depth': 0
+        binding_colour:
+          '#type': textfield
+          '#title': 'Binding colour'
+          '#title_display': inline
+          '#required': true
+  packaging_shipping:
+    '#type': fieldset
+    '#title': 'Packaging & Shipping'
+    flexbox_packing:
+      '#type': webform_flexbox
+      container_packing_left:
+        '#type': container
+        packaging:
+          '#type': webform_term_select
+          '#title': Packaging
+          '#title_display': inline
+          '#required': true
+          '#vocabulary': packaging
+          '#breadcrumb_delimiter': ''
+          '#depth': 1
+        compressed:
+          '#type': textfield
+          '#title': Compressed
+          '#title_display': inline
+          '#required': true
+      container_packing_right:
+        '#type': container
+        shipping_method:
+          '#type': webform_term_select
+          '#title': 'Shipping method'
+          '#title_display': inline
+          '#required': true
+          '#vocabulary': shipment_method
+          '#breadcrumb_delimiter': ''
+          '#depth': 1
+        ship_to:
+          '#type': textfield
+          '#title': 'Ship to'
+          '#title_display': inline
+          '#required': true
+  additional_comments:
+    '#type': textarea
+    '#title': 'Additional comments'
+css: ''
+javascript: ''
+settings:
+  ajax: false
+  ajax_scroll_top: form
+  ajax_progress_type: ''
+  ajax_effect: ''
+  ajax_speed: null
+  page: true
+  page_submit_path: ''
+  page_confirm_path: ''
+  page_theme_name: ''
+  form_title: both
+  form_submit_once: false
+  form_exception_message: ''
+  form_open_message: ''
+  form_close_message: ''
+  form_previous_submissions: false
+  form_confidential: false
+  form_confidential_message: ''
+  form_disable_remote_addr: false
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_reset: false
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_disable_inline_errors: false
+  form_required: false
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_autofocus: false
+  form_details_toggle: false
+  form_access_denied: default
+  form_access_denied_title: ''
+  form_access_denied_message: ''
+  form_access_denied_attributes: {  }
+  form_file_limit: ''
+  share: false
+  share_node: false
+  share_theme_name: ''
+  share_title: true
+  share_page_body_attributes: {  }
+  submission_label: ''
+  submission_log: false
+  submission_views: {  }
+  submission_views_replace: {  }
+  submission_user_columns: {  }
+  submission_user_duplicate: false
+  submission_access_denied: default
+  submission_access_denied_title: ''
+  submission_access_denied_message: ''
+  submission_access_denied_attributes: {  }
+  submission_exception_message: ''
+  submission_locked_message: ''
+  submission_excluded_elements: {  }
+  submission_exclude_empty: false
+  submission_exclude_empty_checkbox: false
+  previous_submission_message: ''
+  previous_submissions_message: ''
+  autofill: false
+  autofill_message: ''
+  autofill_excluded_elements: {  }
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_progress_link: false
+  wizard_progress_states: false
+  wizard_auto_forward: true
+  wizard_auto_forward_hide_next_button: false
+  wizard_keyboard: true
+  wizard_start_label: ''
+  wizard_preview_link: false
+  wizard_confirmation: true
+  wizard_confirmation_label: ''
+  wizard_track: ''
+  wizard_prev_button_label: ''
+  wizard_next_button_label: ''
+  wizard_toggle: false
+  wizard_toggle_show_label: ''
+  wizard_toggle_hide_label: ''
+  preview: 0
+  preview_label: ''
+  preview_title: ''
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  preview_exclude_empty: true
+  preview_exclude_empty_checkbox: false
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  draft_pending_single_message: ''
+  draft_pending_multiple_message: ''
+  confirmation_type: page
+  confirmation_title: ''
+  confirmation_message: ''
+  confirmation_url: ''
+  confirmation_attributes: {  }
+  confirmation_back: true
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  confirmation_exclude_query: false
+  confirmation_exclude_token: false
+  confirmation_update: false
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ''
+  limit_total_unique: false
+  limit_user: null
+  limit_user_interval: null
+  limit_user_message: ''
+  limit_user_unique: false
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: none
+  purge_days: null
+  results_disabled: false
+  results_disabled_ignore: false
+  results_customize: false
+  token_view: false
+  token_update: false
+  token_delete: false
+  serial_disabled: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+    permissions: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  test:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  configuration:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers: {  }
+variants: {  }

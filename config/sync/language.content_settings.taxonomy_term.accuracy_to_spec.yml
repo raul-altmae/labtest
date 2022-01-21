@@ -1,0 +1,11 @@
+uuid: c2ea5682-5698-441f-9df0-05a1920fb553
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.accuracy_to_spec
+id: taxonomy_term.accuracy_to_spec
+target_entity_type_id: taxonomy_term
+target_bundle: accuracy_to_spec
+default_langcode: site_default
+language_alterable: false

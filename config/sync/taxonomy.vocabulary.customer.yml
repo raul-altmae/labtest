@@ -1,0 +1,8 @@
+uuid: bf4cd9f4-0eb7-462f-8f61-ec53a916e29b
+langcode: en
+status: true
+dependencies: {  }
+name: Customer
+vid: customer
+description: ''
+weight: 0

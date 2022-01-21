@@ -1,0 +1,7 @@
+general.term_import:
+  path: '/admin/term-import'
+  defaults:
+    _title: 'Term import'
+    _form: 'Drupal\general\Form\TermImportForm'
+  requirements:
+    _permission: 'access content'

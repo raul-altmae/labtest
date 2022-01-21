@@ -1,0 +1,20 @@
+uuid: 47f3dce5-794b-4eb3-b143-d8e22a836ee2
+langcode: et
+status: true
+dependencies:
+  theme:
+    - wetheme
+_core:
+  default_config_hash: dZx1Xxp4sA24QZwP3YuFFWkzl8mGkL7MLD9yn7Hpds0
+id: wetheme_local_actions
+theme: wetheme
+region: content
+weight: -5
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

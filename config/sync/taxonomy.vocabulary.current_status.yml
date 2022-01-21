@@ -1,0 +1,8 @@
+uuid: 98312316-ec31-45f1-b4d7-f977bd569118
+langcode: en
+status: true
+dependencies: {  }
+name: 'Current status'
+vid: current_status
+description: ''
+weight: 0

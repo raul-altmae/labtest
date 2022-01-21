@@ -1,0 +1,124 @@
+body.body {
+  background: unset;
+}
+header.region-sticky{
+  background: unset;
+}
+header {
+  margin-bottom: 15px;
+}
+.visually-hidden {
+  visibility: hidden;
+  position: absolute;
+  height: 0;
+  width: 0;
+  opacity: 0;
+  overflow: hidden;
+  display: none;
+}
+.main-container{
+  width: 1170px;
+  margin: 0 auto;
+  padding: 0 40px;
+  max-width: 100%;
+}
+.hidden {
+  visibility: hidden;
+  display: none;
+}
+.messages-list {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#webform-submission-sample-request-add-form {
+  width: inherit;
+  background: none;
+  border: none;
+  box-shadow: none;
+  padding: inherit;
+}
+
+.webform-element--title-inline .form-text, .webform-element--title-inline .form-element {
+  width: 100%;
+}
+.footer {
+  margin-top: 45px;
+  padding-top: 35px;
+  padding-bottom: 36px;
+  border-top: 1px solid #E5E5E5;
+}
+main.page-content {
+  margin-bottom: 0;
+}
+.tabs-wrapper{
+  border-bottom: 1px solid #ddd;
+}
+h1.page-title {
+  border-bottom: 1px solid #eeeeee;
+  width: 100%;
+  padding-bottom: 9px;
+  max-width: 100%;
+}
+.layout__header__inner {
+  display: flex;
+  align-items: center;
+  background-color: #f8f8f8;
+  border: 1px solid #e7e7e7;
+  border-radius: 4px;
+  max-width: 1140px;
+  padding-left: 15px;
+  padding-right: 5px;
+}
+.layout__header {
+  padding-top: 20px;
+}
+.block-system-branding-block {
+  float: left;
+}
+.site-name, .site-logo {
+  float: left;
+}
+.site-logo {
+  margin-right: 0;
+  padding-left: 0;
+  margin-top: 8px;
+}
+.site-name {
+  padding: 15px 15px;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.site-name a {
+  text-decoration: none;
+  color: gray;
+}
+
+ul.menu {
+  flex-direction: row;
+  align-items: center;
+  display: flex;
+  list-style: none;
+  list-style-type: none;
+}
+.menu .menu-item + .menu-item {
+  margin-left: 30px;
+}
+li.menu-item {
+  list-style: none;
+}
+.menu-item a, .login-block a {
+  text-decoration: none;
+  color: gray;
+}
+ol, ul{
+  list-style: none;
+}
+.login-block {
+  float: right;
+  margin-left: auto;
+  margin-right: 15px;
+}

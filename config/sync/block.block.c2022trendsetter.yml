@@ -1,0 +1,25 @@
+uuid: 6ae0acbb-d8b0-43d8-a9f1-df22eb709708
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:d49ccd45-8aff-433f-ae50-8d52a4f708da'
+  module:
+    - block_content
+  theme:
+    - wetheme
+id: c2022trendsetter
+theme: wetheme
+region: footer
+weight: 0
+provider: null
+plugin: 'block_content:d49ccd45-8aff-433f-ae50-8d52a4f708da'
+settings:
+  id: 'block_content:d49ccd45-8aff-433f-ae50-8d52a4f708da'
+  label: '© 2022 Trendsetter'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

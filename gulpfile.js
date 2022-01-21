@@ -13,19 +13,17 @@ const yargs = require("yargs/yargs");
 const {hideBin} = require("yargs/helpers");
 const args = yargs(hideBin(process.argv)).argv;
 
-const themeName = args.env ? args.env : 'wetheme';
+const themeName = args.env ? args.env : 'material_base';
 const themePath = `web/themes/${themeName}`;
 
 const paths = {
   assets: `${themePath}/public/assets`,
-  contentStyles: `${themePath}/src/scss/content.scss`,
   css: `${themePath}/public/css`,
   js: `${themePath}/public/js`,
-  mainStyles: `${themePath}/src/scss/main.scss`,
-  mainJs: `${themePath}/src/js/app.js`,
+  mainJs: `${themePath}/js/base.js`,
   nodeModules: "./node_modules",
-  styles: `${themePath}/src/scss/**/*`,
-  scripts: `${themePath}/src/js/**/*`
+  styles: `${themePath}/scss/**/*`,
+  scripts: `${themePath}/js/**/*`
 };
 
 async function nodeModulesToAssets() {
@@ -44,15 +42,6 @@ async function nodeModulesToAssets() {
     );
 }
 
-function mainStylesTask() {
-  return src(paths.mainStyles)
-    .pipe(sourcemaps.init())
-    .pipe(sass())
-    .pipe(postcss([autoprefixer(), cssnano()]))
-    .pipe(sourcemaps.write("."))
-    .pipe(dest(paths.css));
-}
-
 function mainJsTask() {
   return src(paths.mainJs)
     .pipe(sourcemaps.init())
@@ -69,14 +58,6 @@ function componentJsTask() {
     .pipe(dest(paths.js));
 }
 
-function contentStylesTask() {
-  return src(paths.contentStyles)
-    .pipe(sourcemaps.init())
-    .pipe(sass())
-    .pipe(postcss([autoprefixer(), cssnano()]))
-    .pipe(sourcemaps.write("."))
-    .pipe(dest(paths.css));
-}
 
 async function themeTask(done) {
   const {theme} = await prompts({
@@ -102,21 +83,15 @@ async function themeTask(done) {
   done();
 }
 
-function watchStylesTask() {
-  watch([paths.styles], mainStylesTask, contentStylesTask);
-}
-
 function watchJsTask() {
   watch([paths.scripts], mainJsTask);
 }
 
 exports.assets = nodeModulesToAssets;
-exports.watch = parallel(watchStylesTask, watchJsTask);
+exports.watch = parallel(watchJsTask);
 exports.theme = themeTask;
 exports.default = series(
   nodeModulesToAssets,
-  mainStylesTask,
-  contentStylesTask,
   mainJsTask,
   componentJsTask,
 );

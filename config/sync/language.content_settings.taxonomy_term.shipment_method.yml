@@ -1,0 +1,11 @@
+uuid: 9c5dbaab-9ece-4ae7-aaa8-de5613a0d33d
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.shipment_method
+id: taxonomy_term.shipment_method
+target_entity_type_id: taxonomy_term
+target_bundle: shipment_method
+default_langcode: site_default
+language_alterable: false

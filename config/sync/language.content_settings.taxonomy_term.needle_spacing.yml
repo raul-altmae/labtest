@@ -1,0 +1,11 @@
+uuid: 5a7a9a13-9a7e-420e-8e2c-821af98ef71e
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.needle_spacing
+id: taxonomy_term.needle_spacing
+target_entity_type_id: taxonomy_term
+target_bundle: needle_spacing
+default_langcode: site_default
+language_alterable: false

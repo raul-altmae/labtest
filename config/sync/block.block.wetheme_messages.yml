@@ -1,0 +1,22 @@
+uuid: bf35fb59-0d1d-4f26-822b-9b4db4ea6fea
+langcode: et
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - wetheme
+_core:
+  default_config_hash: 6X3lPvQ3fKsArJq6lzf2QRACf9SpxKnd6W2oeg2s0u4
+id: wetheme_messages
+theme: wetheme
+region: header
+weight: 1
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

@@ -1,0 +1,8 @@
+uuid: 012144ec-15c9-49cb-89c9-c9c8c76a6f90
+langcode: en
+status: true
+dependencies: {  }
+name: 'Order sent to'
+vid: order_sent_to
+description: ''
+weight: 0

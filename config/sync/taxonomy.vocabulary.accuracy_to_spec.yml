@@ -1,0 +1,8 @@
+uuid: dd04b62d-c069-458e-a4eb-11a42245e210
+langcode: en
+status: true
+dependencies: {  }
+name: 'Accuracy to spec'
+vid: accuracy_to_spec
+description: ''
+weight: 0

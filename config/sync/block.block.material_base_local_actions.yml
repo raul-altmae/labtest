@@ -1,0 +1,20 @@
+uuid: 155768df-1ddf-4ced-8af2-936c048b1d3a
+langcode: en
+status: true
+dependencies:
+  theme:
+    - material_base
+_core:
+  default_config_hash: CcSHRSW-Ww8Mf355YMEKP8sH4999aCfMLv0QI37-SwM
+id: material_base_local_actions
+theme: material_base
+region: content
+weight: -20
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

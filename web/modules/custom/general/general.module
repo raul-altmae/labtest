@@ -1,0 +1,33 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for general module.
+ *
+ * @DCG
+ * This file is no longer required in Drupal 8.
+ * @see https://www.drupal.org/node/2217931
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\webform\Entity\WebformSubmission;
+
+/**
+ * Implements hook_form_alter().
+ */
+function general_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if ($form_id === 'webform_submission_sample_request_add_form') {
+    $form['elements']['flexbox']['container_left']['order_number']['#default_value'] = get_last_order_number() + 1;
+  }
+}
+
+function get_last_order_number() {
+  $query = \Drupal::entityTypeManager()->getStorage('webform_submission')->getQuery()
+    ->condition('webform_id', 'sample_request')->accessCheck(FALSE)->sort('sid', 'DESC');
+  $result = $query->execute();
+  $last_order = WebformSubmission::load(array_shift($result));
+  if (empty($last_order)) {
+    return 1;
+  }
+  return $last_order->id();
+}

@@ -4,8 +4,10 @@ status: true
 dependencies:
   config:
     - field.field.node.page.body
+    - field.field.node.page.field_test
     - node.type.page
   module:
+    - datetime
     - text
     - user
 _core:
@@ -22,6 +24,15 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_test:
+    weight: 102
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
   links:
     weight: 101
     region: content
