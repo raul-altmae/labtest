@@ -197,6 +197,7 @@
         "drupal/simple_sitemap": "^3.7",
         "drupal/twig_tweak": "^2.7",
         "drupal/webform": "^6.0",
+        "drupal/webform_views": "^5.0@alpha",
         "drush/drush": "^10.6",
         "kint-php/kint": "^3.3",
         "npm-asset/dropzone": "^5.7",

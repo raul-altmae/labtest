@@ -9,8 +9,3 @@ general.admin.content.term_import:
   description: 'Simple term importer form'
   route_name: general.term_import
   parent: system.admin_content
-general.content.submissions:
-  title: 'Submissions'
-  route_name: entity.webform.results_submissions
-  route_parameters: { webform: 'sample_request' }
-  menu_name: main

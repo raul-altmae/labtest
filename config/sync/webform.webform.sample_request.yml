@@ -99,14 +99,21 @@ elements: |-
       '#type': webform_flexbox
       container_left_sample:
         '#type': container
-        size:
-          '#type': webform_term_select
+        size_autocomplete:
+          '#type': entity_autocomplete
           '#title': Size
           '#title_display': inline
+          '#target_type': taxonomy_term
+          '#selection_handler': 'default:taxonomy_term'
+          '#selection_settings':
+            target_bundles:
+              size: size
+            sort:
+              field: weight
+              direction: ASC
+            auto_create: true
+            auto_create_bundle: size
           '#required': true
-          '#vocabulary': size
-          '#breadcrumb_delimiter': ''
-          '#depth': 1
         tog_weight:
           '#type': textfield
           '#title': 'Tog / Weight'

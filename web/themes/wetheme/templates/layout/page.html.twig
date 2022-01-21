@@ -58,7 +58,9 @@
 <div class="main-container">
   {{ page.header[page_title_block] }}
   {{ page.content[local_actions_block] }}
-  {{ page.header.wetheme_primary_local_tasks }}
+  {% if logged_in %}
+    {{ page.header.wetheme_primary_local_tasks }}
+  {% endif %}
   {{ page.pre_content }}
   <main class="page-content clearfix" role="main">
     <div class="visually-hidden"><a id="main-content" tabindex="-1"></a></div>
