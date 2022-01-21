@@ -47,9 +47,9 @@
     {{ page.header.mainnavigation }}
     <div class="login-block">
     {% if logged_in %}
-      <a href="/user/logout">Log out</a>
+      <a href="{{ path('user.logout') }}">Log out</a>
     {% else %}
-      <a href="/user/login">Log in</a>
+      <a href="{{ path('user.login') }}">Log in</a>
     {% endif %}
     </div>
   </div>
