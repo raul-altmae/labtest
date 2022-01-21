@@ -1,5 +1,4 @@
 ignored_config_entities:
-  - 'webform.webform.*'
   - 'block.block.*'
   - '*.block.block.*'
   - 'language.content_settings.webform_submission.*'
