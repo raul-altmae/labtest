@@ -469,6 +469,58 @@ display:
           webform_multiple_value: true
           webform_multiple_delta: 0
           plugin_id: webform_submission_field
+        webform_submission_value_31:
+          id: webform_submission_value_31
+          table: webform_submission_field_sample_request_current_status
+          field: webform_submission_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: 'Current status'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          webform_element_format: label
+          webform_multiple_value: true
+          webform_multiple_delta: 0
+          plugin_id: webform_submission_field
         webform_submission_value_2:
           id: webform_submission_value_2
           table: webform_submission_field_sample_request_order_raised_by
@@ -1561,6 +1613,58 @@ display:
           webform_multiple_value: true
           webform_multiple_delta: 0
           plugin_id: webform_submission_field
+        webform_submission_value_25:
+          id: webform_submission_value_25
+          table: webform_submission_field_sample_request_additional_comments
+          field: webform_submission_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: 'Additional comments'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          webform_element_format: value
+          webform_multiple_value: true
+          webform_multiple_delta: 0
+          plugin_id: webform_submission_field
         webform_submission_value_23:
           id: webform_submission_value_23
           table: webform_submission_field_sample_request_shipping_method
@@ -1665,14 +1769,430 @@ display:
           webform_multiple_value: true
           webform_multiple_delta: 0
           plugin_id: webform_submission_field
-        webform_submission_value_25:
-          id: webform_submission_value_25
-          table: webform_submission_field_sample_request_additional_comments
+        webform_submission_value_34:
+          id: webform_submission_value_34
+          table: webform_submission_field_sample_request_shipping_date
           field: webform_submission_value
           relationship: none
           group_type: group
           admin_label: ''
-          label: 'Additional comments'
+          label: 'Shipping date'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          webform_element_format: html_date
+          webform_multiple_value: true
+          webform_multiple_delta: 0
+          plugin_id: webform_submission_field
+        webform_submission_value_35:
+          id: webform_submission_value_35
+          table: webform_submission_field_sample_request_tracking
+          field: webform_submission_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: Tracking
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          webform_element_format: value
+          webform_multiple_value: true
+          webform_multiple_delta: 0
+          plugin_id: webform_submission_field
+        webform_submission_value_26:
+          id: webform_submission_value_26
+          table: webform_submission_field_sample_request_accuracy_to_spec
+          field: webform_submission_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: 'Accuracy to spec'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          webform_element_format: value
+          webform_multiple_value: true
+          webform_multiple_delta: 0
+          plugin_id: webform_submission_field
+        webform_submission_value_32:
+          id: webform_submission_value_32
+          table: webform_submission_field_sample_request_factory
+          field: webform_submission_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: Factory
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          webform_element_format: value
+          webform_multiple_value: true
+          webform_multiple_delta: 0
+          plugin_id: webform_submission_field
+        webform_submission_value_27:
+          id: webform_submission_value_27
+          table: webform_submission_field_sample_request_carrier_cost
+          field: webform_submission_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: 'Carrier cost'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          webform_element_format: value
+          webform_multiple_value: true
+          webform_multiple_delta: 0
+          plugin_id: webform_submission_field
+        webform_submission_value_33:
+          id: webform_submission_value_33
+          table: webform_submission_field_sample_request_fx_rate
+          field: webform_submission_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: 'FX rate'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          webform_element_format: value
+          webform_multiple_value: true
+          webform_multiple_delta: 0
+          plugin_id: webform_submission_field
+        webform_submission_value_30:
+          id: webform_submission_value_30
+          table: webform_submission_field_sample_request_courier_cost_usd_
+          field: webform_submission_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: 'Courier Cost (USD)'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          webform_element_format: value
+          webform_multiple_value: true
+          webform_multiple_delta: 0
+          plugin_id: webform_submission_field
+        webform_submission_value_29:
+          id: webform_submission_value_29
+          table: webform_submission_field_sample_request_comments
+          field: webform_submission_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: Comments
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          webform_element_format: value
+          webform_multiple_value: true
+          webform_multiple_delta: 0
+          plugin_id: webform_submission_field
+        webform_submission_value_28:
+          id: webform_submission_value_28
+          table: webform_submission_field_sample_request_china
+          field: webform_submission_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: China
           exclude: false
           alter:
             alter_text: false

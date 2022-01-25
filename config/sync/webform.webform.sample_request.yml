@@ -208,6 +208,59 @@ elements: |-
   additional_comments:
     '#type': textarea
     '#title': 'Additional comments'
+  additional_info:
+    '#type': fieldset
+    '#title': 'Additional info'
+    additional_info_left:
+      '#type': webform_flexbox
+      info_left:
+        '#type': container
+        current_status:
+          '#type': webform_term_select
+          '#title': 'Current status'
+          '#title_display': inline
+          '#vocabulary': current_status
+          '#breadcrumb_delimiter': ''
+          '#depth': 0
+        accuracy_to_spec:
+          '#type': textfield
+          '#title': 'Accuracy to spec'
+          '#title_display': inline
+        factory:
+          '#type': textfield
+          '#title': Factory
+          '#title_display': inline
+        fx_rate:
+          '#type': textfield
+          '#title': 'FX rate'
+          '#title_display': inline
+        courier_cost_usd_:
+          '#type': textfield
+          '#title': 'Courier Cost (USD)'
+          '#title_display': inline
+      info_right:
+        '#type': container
+        shipping_date:
+          '#type': date
+          '#title': 'Shipping date'
+          '#title_display': inline
+          '#date_date_format': ''
+        tracking:
+          '#type': textfield
+          '#title': Tracking
+          '#title_display': inline
+        carrier_cost:
+          '#type': textfield
+          '#title': 'Carrier cost'
+          '#title_display': inline
+        china:
+          '#type': textfield
+          '#title': China
+          '#title_display': inline
+    comments:
+      '#type': textarea
+      '#title': Comments
+      '#title_display': inline
 css: ''
 javascript: ''
 settings:
