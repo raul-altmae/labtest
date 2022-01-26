@@ -1,0 +1,20 @@
+uuid: ddbb0e89-073c-48d5-9065-fa1d8940f2c6
+langcode: en
+status: true
+dependencies:
+  module:
+    - sample_cost
+  theme:
+    - wetheme
+id: samplecost
+theme: wetheme
+region: content_sidebar
+weight: 0
+provider: null
+plugin: sample_cost
+settings:
+  id: sample_cost
+  label: Costs
+  provider: sample_cost
+  label_display: visible
+visibility: {  }
