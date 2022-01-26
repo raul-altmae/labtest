@@ -21,5 +21,6 @@ ckeditor_stylesheets:
 regions:
   header: 'Header'
   content: 'Content'
+  content_sidebar: 'Content sidebar'
   footer: 'Footer'
   embedded_blocks: 'Embedded blocks'

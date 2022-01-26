@@ -234,10 +234,11 @@ elements: |-
           '#type': textfield
           '#title': 'FX rate'
           '#title_display': inline
-        courier_cost_usd_:
-          '#type': textfield
+        courier_cost_usd:
+          '#type': number
           '#title': 'Courier Cost (USD)'
           '#title_display': inline
+          '#min': 0
       info_right:
         '#type': container
         shipping_date:
@@ -249,10 +250,16 @@ elements: |-
           '#type': textfield
           '#title': Tracking
           '#title_display': inline
-        carrier_cost:
-          '#type': textfield
-          '#title': 'Carrier cost'
+        carrier_cost_usd:
+          '#type': number
+          '#title': 'Carrier Cost (USD)'
           '#title_display': inline
+          '#min': 0
+        total_cost_of_order:
+          '#type': number
+          '#title': 'Total cost of order'
+          '#title_display': inline
+          '#min': 0
         china:
           '#type': textfield
           '#title': China

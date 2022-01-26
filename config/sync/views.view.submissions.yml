@@ -1977,14 +1977,14 @@ display:
           webform_multiple_value: true
           webform_multiple_delta: 0
           plugin_id: webform_submission_field
-        webform_submission_value_27:
-          id: webform_submission_value_27
-          table: webform_submission_field_sample_request_carrier_cost
+        webform_submission_value_30:
+          id: webform_submission_value_30
+          table: webform_submission_field_sample_request_carrier_cost_usd
           field: webform_submission_value
           relationship: none
           group_type: group
           admin_label: ''
-          label: 'Carrier cost'
+          label: 'Carrier Cost (USD)'
           exclude: false
           alter:
             alter_text: false
@@ -2028,7 +2028,7 @@ display:
           webform_element_format: value
           webform_multiple_value: true
           webform_multiple_delta: 0
-          plugin_id: webform_submission_field
+          plugin_id: webform_submission_field_numeric
         webform_submission_value_33:
           id: webform_submission_value_33
           table: webform_submission_field_sample_request_fx_rate
@@ -2081,9 +2081,9 @@ display:
           webform_multiple_value: true
           webform_multiple_delta: 0
           plugin_id: webform_submission_field
-        webform_submission_value_30:
-          id: webform_submission_value_30
-          table: webform_submission_field_sample_request_courier_cost_usd_
+        webform_submission_value_36:
+          id: webform_submission_value_36
+          table: webform_submission_field_sample_request_courier_cost_usd
           field: webform_submission_value
           relationship: none
           group_type: group
@@ -2132,7 +2132,7 @@ display:
           webform_element_format: value
           webform_multiple_value: true
           webform_multiple_delta: 0
-          plugin_id: webform_submission_field
+          plugin_id: webform_submission_field_numeric
         webform_submission_value_29:
           id: webform_submission_value_29
           table: webform_submission_field_sample_request_comments
