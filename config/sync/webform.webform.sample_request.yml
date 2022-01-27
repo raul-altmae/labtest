@@ -461,7 +461,7 @@ handlers:
     settings:
       states:
         - completed
-      to_mail: test@test.ee
+      to_mail: _default
       to_options: {  }
       cc_mail: ''
       cc_options: {  }
