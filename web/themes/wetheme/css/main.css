@@ -156,3 +156,6 @@ ol, ul{
 .sample-info {
   font-weight: bold;
 }
+.messages.messages--status, .block-page-title-block {
+  margin-top: 20px;
+}

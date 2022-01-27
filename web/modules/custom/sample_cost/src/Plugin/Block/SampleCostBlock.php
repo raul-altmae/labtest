@@ -6,6 +6,7 @@ use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Datetime\DrupalDateTime;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
+use Drupal\taxonomy\Entity\Term;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -53,10 +54,13 @@ class SampleCostBlock extends BlockBase implements ContainerFactoryPluginInterfa
     foreach ($webformSubmissions as $webformSubmission) {
       $webformData = $webformSubmission->getData();
       $orderDate = DrupalDateTime::createFromFormat('Y-m-d', $webformData['order_date']);
-      $china = strtolower($webformData['china']);
-      if ($orderDate >= $currentYear && $china === 'yes') {
-        $sampleCost += (float) $webformData['total_cost_of_order'];
-        $carrierCost += (float) $webformData['carrier_cost_usd'];
+      if (isset($webformData['china'])) {
+        /** @var Term $china */
+        $china = Term::load($webformData['china']);
+        if (!empty($china) && strtolower($china->getName()) === 'yes' && $orderDate >= $currentYear) {
+          $sampleCost += (float) $webformData['total_cost_of_order'];
+          $carrierCost += (float) $webformData['courier_cost_usd'];
+        }
       }
     }
 
