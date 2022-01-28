@@ -1,0 +1,14 @@
+uuid: f32f2a2d-2a12-4dfb-be53-4bd2b9f129bb
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.china
+  module:
+    - user
+id: user_remove_role_action.china
+label: 'Remove the China role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: china

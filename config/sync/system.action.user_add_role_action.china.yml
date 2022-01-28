@@ -1,0 +1,14 @@
+uuid: 9f9ac4c5-383f-4e08-88a9-c50440e3f9a9
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.china
+  module:
+    - user
+id: user_add_role_action.china
+label: 'Add the China role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: china

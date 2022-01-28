@@ -4,6 +4,7 @@ status: true
 dependencies:
   module:
     - sample_cost
+    - user
   theme:
     - wetheme
 id: samplecost
@@ -17,4 +18,12 @@ settings:
   label: Costs
   provider: sample_cost
   label_display: visible
-visibility: {  }
+visibility:
+  user_role:
+    id: user_role
+    roles:
+      administrator: administrator
+      china: china
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
