@@ -87,9 +87,10 @@ function _sample_request_terms() {
  */
 function wetheme_preprocess_views_view__submissions(&$variables) {
   $variables['exposed'] = [
-      "#type" => "details",
-      "#title" => t('Filters'),
-      "#attributes" => ['class' => ['container-inline']],
-      'exposed' => $variables['exposed']
+    "#type" => "details",
+    "#title" => t('Filters'),
+    '#open' => \Drupal::request()->query->has('combine'),
+    "#attributes" => ['class' => ['container-inline']],
+    'exposed' => $variables['exposed']
   ];
 }

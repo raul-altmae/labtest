@@ -26,7 +26,7 @@ function general_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   }
   if ($form_id === 'views_exposed_form' && $route_name === 'view.submissions.page_1') {
     $size_options = [
-      'all' => t('- Any -')
+      '' => t('- Any -')
     ];
     $size_terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'size']);
     foreach ($size_terms as $size) {
