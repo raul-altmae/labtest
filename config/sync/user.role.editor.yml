@@ -15,5 +15,7 @@ permissions:
   - 'access toolbar'
   - 'administer taxonomy'
   - 'link to any page'
+  - 'opt-in or out of google analytics tracking'
+  - 'use text format basic_html'
   - 'view any webform submission'
   - 'view the administration theme'
