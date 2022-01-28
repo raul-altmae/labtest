@@ -48,6 +48,13 @@ header {
   padding: inherit;
 }
 
+#views-exposed-form-submissions-page-1 {
+  background: none;
+  border: none;
+  box-shadow: none;
+  padding: inherit;
+}
+
 .webform-element--title-inline .form-text, .webform-element--title-inline .form-element {
   width: 100%;
 }

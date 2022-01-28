@@ -16,12 +16,35 @@ use Drupal\webform\Entity\WebformSubmission;
  * Implements hook_form_alter().
  */
 function general_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $route_name = \Drupal::routeMatch()->getRouteName();
   if ($form_id === 'webform_submission_sample_request_add_form') {
     $route_name = \Drupal::routeMatch()->getRouteName();
     $form['elements']['flexbox']['container_left']['order_number']['#default_value'] = get_last_order_number() + 1;
     if ($route_name === 'entity.webform.canonical') {
       $form['elements']['additional_info']['#attributes']['hidden'] = TRUE;
     }
+  }
+  if ($form_id === 'views_exposed_form' && $route_name === 'view.submissions.page_1') {
+    $size_options = [
+      'all' => t('- Any -')
+    ];
+    $size_terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'size']);
+    foreach ($size_terms as $size) {
+      $size_options[$size->id()] = $size->getName();
+    }
+
+    # change date fields to date field
+    $form['webform_submission_value']['#type'] = 'date';
+    $form['webform_submission_value_2']['#type'] = 'date';
+    $form['webform_submission_value_13']['#type'] = 'date';
+    # change size field to drop down
+    $form['webform_submission_value_6'] = [
+      '#type' => 'select',
+      '#options' => $size_options,
+      '#default_value' => "All",
+      '#size' => null,
+      '#required' => FALSE
+    ];
   }
 }
 

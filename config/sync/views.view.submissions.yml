@@ -2304,6 +2304,730 @@ display:
           expose:
             operator_limit_selection: false
             operator_list: {  }
+        combine:
+          id: combine
+          table: views
+          field: combine
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: contains
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: combine_op
+            label: Search
+            description: ''
+            use_operator: false
+            operator: combine_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: combine
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              editor: '0'
+              china: '0'
+            placeholder: 'Find submissions'
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          fields:
+            webform_submission_value_7: webform_submission_value_7
+            webform_submission_value_8: webform_submission_value_8
+            webform_submission_value_9: webform_submission_value_9
+            webform_submission_value_12: webform_submission_value_12
+            webform_submission_value_14: webform_submission_value_14
+            webform_submission_value_15: webform_submission_value_15
+            webform_submission_value_16: webform_submission_value_16
+            webform_submission_value_17: webform_submission_value_17
+            webform_submission_value_20: webform_submission_value_20
+            webform_submission_value_22: webform_submission_value_22
+            webform_submission_value_25: webform_submission_value_25
+            webform_submission_value_24: webform_submission_value_24
+            webform_submission_value_35: webform_submission_value_35
+            webform_submission_value_26: webform_submission_value_26
+            webform_submission_value_32: webform_submission_value_32
+            webform_submission_value_33: webform_submission_value_33
+            webform_submission_value_29: webform_submission_value_29
+          plugin_id: combine
+        webform_submission_value:
+          id: webform_submission_value
+          table: webform_submission_field_sample_request_order_date
+          field: webform_submission_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value:
+            min: ''
+            max: ''
+            value: ''
+            type: date
+          group: 1
+          exposed: true
+          expose:
+            operator_id: webform_submission_value_op
+            label: 'Order date'
+            description: ''
+            use_operator: false
+            operator: webform_submission_value_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: webform_submission_value
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              editor: '0'
+              china: '0'
+            placeholder: ''
+            min_placeholder: ''
+            max_placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: webform_submission_date_filter
+        webform_submission_value_1:
+          id: webform_submission_value_1
+          table: webform_submission_field_sample_request_order_raised_by
+          field: webform_submission_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: in
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: webform_submission_value_1_op
+            label: 'Order raised by'
+            description: ''
+            use_operator: false
+            operator: webform_submission_value_1_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: webform_submission_value_1
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              editor: '0'
+              china: '0'
+            reduce: 0
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: webform_submission_entity_reference_select_filter
+        webform_submission_value_2:
+          id: webform_submission_value_2
+          table: webform_submission_field_sample_request_required_date_of_arrival
+          field: webform_submission_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value:
+            min: ''
+            max: ''
+            value: ''
+            type: date
+          group: 1
+          exposed: true
+          expose:
+            operator_id: webform_submission_value_2_op
+            label: 'Required date of arrival'
+            description: ''
+            use_operator: false
+            operator: webform_submission_value_2_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: webform_submission_value_2
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              editor: '0'
+              china: '0'
+            placeholder: ''
+            min_placeholder: ''
+            max_placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: webform_submission_date_filter
+        webform_submission_value_3:
+          id: webform_submission_value_3
+          table: webform_submission_field_sample_request_sample_type
+          field: webform_submission_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: in
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: webform_submission_value_3_op
+            label: 'Sample type'
+            description: ''
+            use_operator: false
+            operator: webform_submission_value_3_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: webform_submission_value_3
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              editor: '0'
+              china: '0'
+            reduce: 0
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: webform_submission_entity_reference_select_filter
+        webform_submission_value_4:
+          id: webform_submission_value_4
+          table: webform_submission_field_sample_request_customer
+          field: webform_submission_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: in
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: webform_submission_value_4_op
+            label: Customer
+            description: ''
+            use_operator: false
+            operator: webform_submission_value_4_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: webform_submission_value_4
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              editor: '0'
+              china: '0'
+            reduce: 0
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: webform_submission_entity_reference_select_filter
+        webform_submission_value_5:
+          id: webform_submission_value_5
+          table: webform_submission_field_sample_request_product
+          field: webform_submission_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: in
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: webform_submission_value_5_op
+            label: Product
+            description: ''
+            use_operator: false
+            operator: webform_submission_value_5_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: webform_submission_value_5
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              editor: '0'
+              china: '0'
+            reduce: 0
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: webform_submission_entity_reference_select_filter
+        webform_submission_value_6:
+          id: webform_submission_value_6
+          table: webform_submission_field_sample_request_size_autocomplete
+          field: webform_submission_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: webform_submission_value_6_op
+            label: Size
+            description: ''
+            use_operator: false
+            operator: webform_submission_value_6_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: webform_submission_value_6
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              editor: '0'
+              china: '0'
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: webform_submission_field_filter
+        webform_submission_value_7:
+          id: webform_submission_value_7
+          table: webform_submission_field_sample_request_edge_finishing
+          field: webform_submission_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: in
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: webform_submission_value_7_op
+            label: 'Edge finishing'
+            description: ''
+            use_operator: false
+            operator: webform_submission_value_7_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: webform_submission_value_7
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              editor: '0'
+              china: '0'
+            reduce: 0
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: webform_submission_entity_reference_select_filter
+        webform_submission_value_8:
+          id: webform_submission_value_8
+          table: webform_submission_field_sample_request_stitch_pattern
+          field: webform_submission_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: in
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: webform_submission_value_8_op
+            label: 'Stitch pattern'
+            description: ''
+            use_operator: false
+            operator: webform_submission_value_8_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: webform_submission_value_8
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              editor: '0'
+              china: '0'
+            reduce: 0
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: webform_submission_entity_reference_select_filter
+        webform_submission_value_9:
+          id: webform_submission_value_9
+          table: webform_submission_field_sample_request_needle_spacing
+          field: webform_submission_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: in
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: webform_submission_value_9_op
+            label: 'Needle spacing'
+            description: ''
+            use_operator: false
+            operator: webform_submission_value_9_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: webform_submission_value_9
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              editor: '0'
+              china: '0'
+            reduce: 0
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: webform_submission_entity_reference_select_filter
+        webform_submission_value_10:
+          id: webform_submission_value_10
+          table: webform_submission_field_sample_request_packaging
+          field: webform_submission_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: in
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: webform_submission_value_10_op
+            label: Packaging
+            description: ''
+            use_operator: false
+            operator: webform_submission_value_10_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: webform_submission_value_10
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              editor: '0'
+              china: '0'
+            reduce: 0
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: webform_submission_entity_reference_select_filter
+        webform_submission_value_11:
+          id: webform_submission_value_11
+          table: webform_submission_field_sample_request_shipping_method
+          field: webform_submission_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: in
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: webform_submission_value_11_op
+            label: 'Shipping method'
+            description: ''
+            use_operator: false
+            operator: webform_submission_value_11_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: webform_submission_value_11
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              editor: '0'
+              china: '0'
+            reduce: 0
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: webform_submission_entity_reference_select_filter
+        webform_submission_value_12:
+          id: webform_submission_value_12
+          table: webform_submission_field_sample_request_current_status
+          field: webform_submission_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: in
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: webform_submission_value_12_op
+            label: 'Current status'
+            description: ''
+            use_operator: false
+            operator: webform_submission_value_12_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: webform_submission_value_12
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              editor: '0'
+              china: '0'
+            reduce: 0
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: webform_submission_entity_reference_select_filter
+        webform_submission_value_13:
+          id: webform_submission_value_13
+          table: webform_submission_field_sample_request_shipping_date
+          field: webform_submission_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value:
+            min: ''
+            max: ''
+            value: ''
+            type: date
+          group: 1
+          exposed: true
+          expose:
+            operator_id: webform_submission_value_13_op
+            label: 'Shipping date'
+            description: ''
+            use_operator: false
+            operator: webform_submission_value_13_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: webform_submission_value_13
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              editor: '0'
+              china: '0'
+            placeholder: ''
+            min_placeholder: ''
+            max_placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: webform_submission_date_filter
+        webform_submission_value_14:
+          id: webform_submission_value_14
+          table: webform_submission_field_sample_request_china
+          field: webform_submission_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: in
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: webform_submission_value_14_op
+            label: China
+            description: ''
+            use_operator: false
+            operator: webform_submission_value_14_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: webform_submission_value_14
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              editor: '0'
+              china: '0'
+            reduce: 0
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: webform_submission_entity_reference_select_filter
       sorts: {  }
       title: Submissions
       header: {  }
@@ -2317,6 +3041,7 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - url
         - url.query_args
         - user
       tags: {  }
@@ -2342,6 +3067,7 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - url
         - url.query_args
         - user
       tags: {  }
