@@ -25,6 +25,15 @@ elements: |-
         '#required': true
         '#min': 0
         '#step': 1
+      country:
+        '#type': webform_term_select
+        '#title': Country
+        '#title_display': inline
+        '#required': true
+        '#default_value': '175'
+        '#vocabulary': country
+        '#breadcrumb_delimiter': ''
+        '#depth': 0
       order_date:
         '#type': date
         '#title': 'Order date'
@@ -54,15 +63,6 @@ elements: |-
         '#vocabulary': sample_type
         '#breadcrumb_delimiter': ''
         '#depth': 1
-      country:
-        '#type': webform_term_select
-        '#title': Country
-        '#title_display': inline
-        '#required': true
-        '#default_value': '175'
-        '#vocabulary': country
-        '#breadcrumb_delimiter': ''
-        '#depth': 0
     container_right:
       '#type': container
       customer:
