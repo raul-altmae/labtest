@@ -54,6 +54,15 @@ elements: |-
         '#vocabulary': sample_type
         '#breadcrumb_delimiter': ''
         '#depth': 1
+      country:
+        '#type': webform_term_select
+        '#title': Country
+        '#title_display': inline
+        '#required': true
+        '#default_value': '179'
+        '#vocabulary': country
+        '#breadcrumb_delimiter': ''
+        '#depth': 0
     container_right:
       '#type': container
       customer:
@@ -140,10 +149,13 @@ elements: |-
       container_right_sample:
         '#type': container
         care_label:
-          '#type': textfield
+          '#type': webform_term_select
           '#title': 'Care label'
           '#title_display': inline
           '#required': true
+          '#vocabulary': yes_no
+          '#breadcrumb_delimiter': ''
+          '#depth': 0
         care_label_code:
           '#type': textfield
           '#title': 'Care label code'

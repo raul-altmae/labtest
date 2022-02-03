@@ -166,3 +166,6 @@ ol, ul{
 .messages.messages--status, .block-page-title-block {
   margin-top: 20px;
 }
+.views-exposed-form__item.views-exposed-form__item.views-exposed-form__item--actions {
+  margin-top: 12px;
+}
