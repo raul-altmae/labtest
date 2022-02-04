@@ -29,7 +29,7 @@ function general_form_alter(&$form, FormStateInterface $form_state, $form_id) {
     $form['elements']['sample_spec']['#suffix'] = '</div>';
     $form['elements']['sample_spec']['load'] = [
       '#type' => 'button',
-      '#value' => t('Load specs'),
+      '#value' => t('Import from PRF'),
       '#weight' => -1,
       '#limit_validation_errors' => [],
       '#ajax' => [
