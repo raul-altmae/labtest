@@ -86,7 +86,6 @@ function _callback_form(&$form, FormStateInterface $form_state, $form_id) {
     "PWD" => $password,
   ];
   $dbc = sqlsrv_connect($host, $connectionInfoTrend) or $logger->error(print_r(sqlsrv_errors(), TRUE));
-  $dbc = FALSE;
   if ($dbc !== FALSE) {
     $stmt = sqlsrv_query($dbc, "SELECT pw.weight_name, product_code FROM prf_products pp
                                        LEFT JOIN prf_weights pw ON pp.prf_weights_ID = pw.ID
