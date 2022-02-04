@@ -9,7 +9,6 @@
  * @see https://www.drupal.org/node/2217931
  */
 
-use Drupal\Core\Datetime\DrupalDateTime;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\taxonomy\Entity\Term;
 use Drupal\webform\Entity\WebformSubmission;
@@ -89,15 +88,9 @@ function _callback_form(&$form, FormStateInterface $form_state, $form_id) {
   $dbc = sqlsrv_connect($host, $connectionInfoTrend) or $logger->error(print_r(sqlsrv_errors(), TRUE));
   $dbc = FALSE;
   if ($dbc !== FALSE) {
-    $code = '';
-    $term = Term::load(1);
-    $date = DrupalDateTime::createFromTimestamp(time())->modify('last month');
-    $year = $date->format('y');
-    $month = $date->format('m');
     $stmt = sqlsrv_query($dbc, "SELECT pw.weight_name, product_code FROM prf_products pp
                                        LEFT JOIN prf_weights pw ON pp.prf_weights_ID = pw.ID
                                        WHERE pp.product_code = '$product_code'") or $logger->error(print_r(sqlsrv_errors(), TRUE));
-    $return = FALSE;
     while ($row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
       if (!empty($row['exchange_rate'])) {
         $form['elements']['sample_spec']['flexbox_sample']['container_left_sample']['tog_weight']['#value'] = $row['weight_name'];
