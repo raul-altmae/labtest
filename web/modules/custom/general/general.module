@@ -94,7 +94,7 @@ function _callback_form(&$form, FormStateInterface $form_state, $form_id) {
       $form['elements']['sample_spec']['flexbox_sample']['container_left_sample']['tog_weight']['#value'] = $row['weight_name'];
     }
     $stmt_prf = sqlsrv_query($dbc, "SELECT TOP 1
-                                      pr.top_stitching,
+                                      pr.top_stitching_pattern,
                                       pb.code 'binding',
                                       CONCAT(pr.fabric1, ' ', CAST(pf.code AS varchar)) 'fabric' ,
                                       pr.edge_finishing,
@@ -111,7 +111,7 @@ function _callback_form(&$form, FormStateInterface $form_state, $form_id) {
                                     WHERE pr.prf_ID = '$prf' AND pr.deleted = 0 AND pr.archived = 0
                                     ORDER BY pr.ID DESC") or $logger->error(print_r(sqlsrv_errors(), TRUE));
     while ($prf_row = sqlsrv_fetch_array($stmt_prf, SQLSRV_FETCH_ASSOC)) {
-      $form['elements']['sample_spec']['flexbox_sample']['container_right_sample']['stitch_pattern']['#value'] = getTerm($prf_row['top_stitching'], 'stitch_direction')->id();
+      $form['elements']['sample_spec']['flexbox_sample']['container_right_sample']['stitch_pattern']['#value'] = getTerm($prf_row['top_stitching_pattern'], 'stitch_pattern')->id();
       $form['elements']['sample_spec']['flexbox_sample']['container_right_sample']['binding_colour']['#value'] = $prf_row['binding'];
       $form['elements']['sample_spec']['flexbox_sample']['container_left_sample']['filling_fibres_and_']['#value'] = $prf_row['filling'];
       $form['elements']['sample_spec']['flexbox_sample']['container_left_sample']['cover_fabric_tick_shell']['#value'] = $prf_row['fabric'];
