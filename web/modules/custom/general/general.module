@@ -127,7 +127,6 @@ function _callback_form(&$form, FormStateInterface $form_state, $form_id) {
     }
     sqlsrv_close($dbc);
   }
-  dump($form, $prf_row, $row);
   return $form['elements']['sample_spec'];
 }
 
