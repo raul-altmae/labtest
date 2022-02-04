@@ -169,3 +169,9 @@ ol, ul{
 .views-exposed-form__item.views-exposed-form__item.views-exposed-form__item--actions {
   margin-top: 12px;
 }
+.form-item {
+  margin-top: 0;
+}
+.ajax-progress__throbber {
+  display: none;
+}

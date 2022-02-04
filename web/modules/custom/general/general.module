@@ -9,7 +9,9 @@
  * @see https://www.drupal.org/node/2217931
  */
 
+use Drupal\Core\Datetime\DrupalDateTime;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\taxonomy\Entity\Term;
 use Drupal\webform\Entity\WebformSubmission;
 
 /**
@@ -18,15 +20,35 @@ use Drupal\webform\Entity\WebformSubmission;
 function general_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   $route_name = \Drupal::routeMatch()->getRouteName();
   if ($form_id === 'webform_submission_sample_request_add_form') {
+
     $route_name = \Drupal::routeMatch()->getRouteName();
     $form['elements']['flexbox']['container_left']['order_number']['#default_value'] = get_last_order_number() + 1;
     if ($route_name === 'entity.webform.canonical') {
       $form['elements']['additional_info']['#attributes']['hidden'] = TRUE;
     }
+    $form['elements']['sample_spec']['#prefix'] = '<div id="edit-spec-output">';
+    $form['elements']['sample_spec']['#suffix'] = '</div>';
+    $form['elements']['sample_spec']['load'] = [
+      '#type' => 'button',
+      '#value' => t('Load specs'),
+      '#weight' => -1,
+      '#limit_validation_errors' => array(),
+      '#ajax' => [
+        'callback' => '_callback_form', // don't forget :: when calling a class method.
+        //'callback' => [$this, 'myAjaxCallback'], //alternative notation
+        'disable-refocus' => FALSE, // Or TRUE to prevent re-focusing on the triggering element.
+        'event' => 'click',
+        'wrapper' => 'edit-spec-output',
+        'progress' => [
+          'type' => 'throbber',
+          'message' => 'Loading...'
+        ],// This element is updated with this AJAX callback.
+      ]
+    ];
   }
   if ($form_id === 'views_exposed_form' && $route_name === 'view.submissions.page_1') {
     $size_options = [
-      '' => t('- Any -')
+      '' => t('- Any -'),
     ];
     $size_terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'size']);
     foreach ($size_terms as $size) {
@@ -42,15 +64,96 @@ function general_form_alter(&$form, FormStateInterface $form_state, $form_id) {
       '#type' => 'select',
       '#options' => $size_options,
       '#default_value' => "All",
-      '#size' => null,
-      '#required' => FALSE
+      '#size' => NULL,
+      '#required' => FALSE,
     ];
   }
 }
 
+function _callback_form(&$form, FormStateInterface $form_state, $form_id) {
+  // Prepare our textfield. check if the example select field has a selected option.
+  $product_code = $form['elements']['flexbox']['container_right']['product_code']['#value'];
+  $prf = $form['elements']['flexbox']['container_right']['prf_number']['#value'];
+  // Return the prepared textfield.
+
+  $logger = \Drupal::logger('prf_update');
+  $host = '192.168.1.227\SQL';
+  $username = 'tahukas_viewer';
+  $password = 'Ainult lugemisõigustega';
+
+  $connectionInfoTrend = [
+    "Database" => 'tahukas',
+    "UID" => $username,
+    "PWD" => $password,
+  ];
+  $dbc = sqlsrv_connect($host, $connectionInfoTrend) or $logger->error(print_r(sqlsrv_errors(), TRUE));
+  $dbc = FALSE;
+  if ($dbc !== FALSE) {
+    $code = '';
+    $term = Term::load(1);
+    $date = DrupalDateTime::createFromTimestamp(time())->modify('last month');
+    $year = $date->format('y');
+    $month = $date->format('m');
+    $stmt = sqlsrv_query($dbc, "SELECT pw.weight_name, product_code FROM prf_products pp
+                                       LEFT JOIN prf_weights pw ON pp.prf_weights_ID = pw.ID
+                                       WHERE pp.product_code = '$product_code'") or $logger->error(print_r(sqlsrv_errors(), TRUE));
+    $return = FALSE;
+    while ($row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
+      if (!empty($row['exchange_rate'])) {
+        $form['elements']['sample_spec']['flexbox_sample']['container_left_sample']['tog_weight']['#value'] = $row['weight_name'];
+      }
+    }
+    $stmt_prf = sqlsrv_query($dbc, "SELECT TOP 1
+                                      pr.top_stitching,
+                                      pb.code 'binding',
+                                      CONCAT(pr.fabric1, ' ', CAST(pf.code AS varchar)) 'fabric' ,
+                                      pr.edge_finishing,
+                                      CONCAT(
+                                      CAST(pfn.fibre1_prcnt AS varchar) + '% ' + pfn.fibre1_code,
+                                      ' / ' + CAST(pfn.fibre2_prcnt AS varchar) + '% ' + pfn.fibre2_code,
+                                      ' / ' + CAST(pfn.fibre3_prcnt AS varchar) + '% ' + pfn.fibre3_code) 'filling',
+                                      ISNULL(CAST(pcl.code AS varchar), ISNULL(CAST(pr.care_label_code_new1 AS varchar), null)) 'care_label'
+                                    FROM prf_raw pr
+                                      LEFT JOIN prf_fibre_names pfn ON pfn.ID=pr.fill_fibre
+                                      LEFT JOIN prf_fabrics pf ON pr.fabric_code = pf.ID
+                                      LEFT JOIN prf_care_labels pcl ON pr.care_label_code_existing1  = pcl.ID
+                                      LEFT JOIN prf_bindings pb ON pr.binding_code = pb.ID
+                                    WHERE pr.prf_ID = '$prf' AND pr.deleted = 0 AND pr.archived = 0
+                                    ORDER BY pr.ID DESC") or $logger->error(print_r(sqlsrv_errors(), TRUE));
+    $return = FALSE;
+    while ($prf_row = sqlsrv_fetch_array($stmt_prf, SQLSRV_FETCH_ASSOC)) {
+      if (!empty($prf_row['exchange_rate'])) {
+        $form['elements']['sample_spec']['flexbox_sample']['container_right_sample']['stitch_pattern']['#value'] = getTerm($prf_row['top_stitching'],'stitch_direction')->id();
+        $form['elements']['sample_spec']['flexbox_sample']['container_right_sample']['binding_colour']['#value'] = $prf_row['binding'];
+        $form['elements']['sample_spec']['flexbox_sample']['container_left_sample']['filling_fibres_and_']['#value'] = $prf_row['filling'];
+        $form['elements']['sample_spec']['flexbox_sample']['container_left_sample']['cover_fabric_tick_shell']['#value'] = $prf_row['fabric'];
+        $form['elements']['sample_spec']['flexbox_sample']['container_left_sample']['edge_finishing']['#value'] = getTerm($prf_row['edge_finishing'],'edge_finish')->id();
+        if (isset($prf_row['care_label']) && !empty($prf_row['care_label'])) {
+          $form['elements']['sample_spec']['flexbox_sample']['container_right_sample']['care_label_code']['#value'] = $prf_row['care_label'];
+          $form['elements']['sample_spec']['flexbox_sample']['container_right_sample']['care_label']['#value'] = getTerm('Yes', 'yes_no')->id();
+        }
+      }
+    }
+    sqlsrv_close($dbc);
+  }
+  return $form['elements']['sample_spec'];
+}
+
+function getTerm($name, $vocabulary) {
+  $term = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => $vocabulary, 'name' => $name]);
+  $term = reset($term);
+  if (empty($term)) {
+    $term = Term::create([
+      'vid' => $vocabulary,
+      'name' => (string)$name
+    ]);
+    $term->save();
+  }
+  return $term;
+}
+
 function get_last_order_number() {
-  $query = \Drupal::entityTypeManager()->getStorage('webform_submission')->getQuery()
-    ->condition('webform_id', 'sample_request')->accessCheck(FALSE)->sort('sid', 'DESC');
+  $query = \Drupal::entityTypeManager()->getStorage('webform_submission')->getQuery()->condition('webform_id', 'sample_request')->accessCheck(FALSE)->sort('sid', 'DESC');
   $result = $query->execute();
   $last_order = WebformSubmission::load(array_shift($result));
   if (empty($last_order)) {
