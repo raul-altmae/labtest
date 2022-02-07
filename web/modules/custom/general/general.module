@@ -143,9 +143,13 @@ function getTerm($name, $vocabulary) {
 function get_last_order_number() {
   $query = \Drupal::entityTypeManager()->getStorage('webform_submission')->getQuery()->condition('webform_id', 'sample_request')->accessCheck(FALSE)->sort('sid', 'DESC');
   $result = $query->execute();
-  $last_order = WebformSubmission::load(array_shift($result));
+  $webform_submission = array_shift($result);
+  if (empty($webform_submission)) {
+    return 0;
+  }
+  $last_order = WebformSubmission::load($webform_submission);
   if (empty($last_order)) {
-    return 1;
+    return 0;
   }
   return $last_order->id();
 }
