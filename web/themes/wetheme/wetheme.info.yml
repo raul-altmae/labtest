@@ -10,6 +10,9 @@ libraries:
 libraries-override:
   system/base: false
   classy/base: false
+  core/drupal.tableheader:
+    js:
+      /themes/contrib/gin/js/overrides/gin_tableheader.js: js/overrides/tableheader.js
 
 stylesheets-remove:
   - '@classy/css/components/file.css'

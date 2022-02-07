@@ -9,6 +9,7 @@
  * @see https://www.drupal.org/node/2217931
  */
 
+use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\taxonomy\Entity\Term;
 use Drupal\webform\Entity\WebformSubmission;
@@ -157,8 +158,7 @@ function get_last_order_number() {
 function general_preprocess_views_view_field(&$variables) {
   $view = $variables['view'];
   $field = $variables['field'];
-  if ($view->storage->id() === 'submissions' &&
-    $field->field === 'operations') {
+  if ($view->storage->id() === 'submissions' && $field->field === 'operations') {
     $user = \Drupal::currentUser();
     if (!in_array('administrator', $user->getRoles())) {
       /** @var \Drupal\webform\WebformSubmissionInterface $webform_submission */
@@ -166,5 +166,60 @@ function general_preprocess_views_view_field(&$variables) {
       $edit_link = $webform_submission->toUrl('edit-form')->toString();
       $variables['output'] = ['#markup' => "<a class='button' href='$edit_link'>Edit</a>"];
     }
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_presave().
+ */
+function general_webform_submission_presave(EntityInterface $entity) {
+  $original_data = $entity->getOriginalData();
+  if (!empty($original_data)) {
+    /** @var WebformSubmission $webform_submission */
+    $entity_type = 'webform_submission';
+    $view_mode = 'table';
+    $webform_submission = $entity;
+    $site_settings = \Drupal::config('system.site');
+    $new_data = $entity->getData();
+    $order_number = $new_data['order_number'];
+    $changes_map = [];
+    foreach ($original_data as $field => $value) {
+      if (isset($new_data[$field]) && $new_data[$field] !== $value) {
+        $changes_map[$field] = $new_data[$field];
+      }
+    }
+    if (empty($changes_map)) {
+      return;
+    }
+    $changes_map['order_number'] = $order_number;
+    $view_builder = \Drupal::entityTypeManager()->getViewBuilder($entity_type);
+    $build = $view_builder->view($webform_submission, $view_mode);
+    $build['submission'] = $build;
+    render($build);
+    $data = $build['data'];
+    foreach ($data['#rows'] as $key => $row) {
+      if (array_key_exists($key, $changes_map)) {
+        if (in_array($key, ['current_status', 'accuracy_to_spec', 'factory', 'fx_rate', 'courier_cost_usd', 'shipping_date', 'tracking', 'carrier_cost_usd', 'total_cost_of_order', 'china', 'comments'])) {
+          $data['#rows'][$key.'_changed'] = $row;
+          unset($data['#rows'][$key]);
+        }
+      } else {
+        unset($data['#rows'][$key]);
+      }
+    }
+    if (!empty($data['#rows'])) {
+      $body = render($data);
+      \Drupal::service('plugin.manager.mail')->mail('general', 'user_notification', $site_settings->get('mail'), 'en', ['body' => trim($body), 'subject' => "Sample request $order_number has been changed"]);
+    }
+  }
+}
+
+/**
+ * Implements hook_mail().
+ */
+function general_mail($key, &$message, $params) {
+  if ($key === 'user_notification') {
+    $message['subject'] = $params['subject'];
+    $message['body'][] = $params['body'];
   }
 }
