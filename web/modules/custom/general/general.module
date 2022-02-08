@@ -221,5 +221,6 @@ function general_mail($key, &$message, $params) {
   if ($key === 'user_notification') {
     $message['subject'] = $params['subject'];
     $message['body'][] = $params['body'];
+    $message['headers']['Content-Type'] = 'text/html; charset=UTF8;';
   }
 }

@@ -82,9 +82,11 @@ display:
             created: created
             webform_submission_value: webform_submission_value
             webform_submission_value_1: webform_submission_value_1
+            webform_submission_value_31: webform_submission_value_31
             webform_submission_value_2: webform_submission_value_2
             webform_submission_value_3: webform_submission_value_3
             webform_submission_value_4: webform_submission_value_4
+            webform_submission_value_27: webform_submission_value_27
             webform_submission_value_5: webform_submission_value_5
             webform_submission_value_6: webform_submission_value_6
             webform_submission_value_7: webform_submission_value_7
@@ -103,9 +105,19 @@ display:
             webform_submission_value_20: webform_submission_value_20
             webform_submission_value_21: webform_submission_value_21
             webform_submission_value_22: webform_submission_value_22
+            webform_submission_value_25: webform_submission_value_25
             webform_submission_value_23: webform_submission_value_23
             webform_submission_value_24: webform_submission_value_24
-            webform_submission_value_25: webform_submission_value_25
+            webform_submission_value_34: webform_submission_value_34
+            webform_submission_value_35: webform_submission_value_35
+            webform_submission_value_26: webform_submission_value_26
+            webform_submission_value_32: webform_submission_value_32
+            webform_submission_value_30: webform_submission_value_30
+            webform_submission_value_33: webform_submission_value_33
+            webform_submission_value_36: webform_submission_value_36
+            webform_submission_value_29: webform_submission_value_29
+            webform_submission_value_28: webform_submission_value_28
+            operations: operations
           info:
             created:
               sortable: true
@@ -128,6 +140,13 @@ display:
               separator: ''
               empty_column: false
               responsive: ''
+            webform_submission_value_31:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
             webform_submission_value_2:
               sortable: true
               default_sort_order: asc
@@ -144,6 +163,13 @@ display:
               responsive: ''
             webform_submission_value_4:
               sortable: true
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            webform_submission_value_27:
+              sortable: false
               default_sort_order: asc
               align: ''
               separator: ''
@@ -275,6 +301,13 @@ display:
               separator: ''
               empty_column: false
               responsive: ''
+            webform_submission_value_25:
+              sortable: true
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
             webform_submission_value_23:
               sortable: true
               default_sort_order: asc
@@ -289,9 +322,70 @@ display:
               separator: ''
               empty_column: false
               responsive: ''
-            webform_submission_value_25:
-              sortable: true
+            webform_submission_value_34:
+              sortable: false
               default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            webform_submission_value_35:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            webform_submission_value_26:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            webform_submission_value_32:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            webform_submission_value_30:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            webform_submission_value_33:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            webform_submission_value_36:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            webform_submission_value_29:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            webform_submission_value_28:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            operations:
               align: ''
               separator: ''
               empty_column: false
