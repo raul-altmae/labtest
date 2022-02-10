@@ -6,6 +6,7 @@ ignored_config_entities:
   - 'recaptcha.*'
   - 'google_tag.*'
   - smtp.settings
+  - mailsystem.settings
 langcode: en
 _core:
   default_config_hash: 4KVGEBKE4yJ8iR8-OkQU2aWkdw4YV0kJ4q-8C4-_FO4
