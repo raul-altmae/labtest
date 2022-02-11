@@ -86,6 +86,14 @@ function _callback_form(&$form, FormStateInterface $form_state, $form_id) {
     "UID" => $username,
     "PWD" => $password,
   ];
+  $form['elements']['sample_spec']['flexbox_sample']['container_left_sample']['tog_weight']['#value'] = '';
+  $form['elements']['sample_spec']['flexbox_sample']['container_right_sample']['stitch_pattern']['#value'] = '';
+  $form['elements']['sample_spec']['flexbox_sample']['container_right_sample']['binding_colour']['#value'] = '';
+  $form['elements']['sample_spec']['flexbox_sample']['container_left_sample']['filling_fibres_and_']['#value'] = '';
+  $form['elements']['sample_spec']['flexbox_sample']['container_left_sample']['cover_fabric_tick_shell']['#value'] = '';
+  $form['elements']['sample_spec']['flexbox_sample']['container_left_sample']['edge_finishing']['#value'] = '';
+  $form['elements']['sample_spec']['flexbox_sample']['container_right_sample']['care_label_code']['#value'] = '';
+  $form['elements']['sample_spec']['flexbox_sample']['container_right_sample']['care_label']['#value'] = '';
   $dbc = sqlsrv_connect($host, $connectionInfoTrend) or $logger->error(print_r(sqlsrv_errors(), TRUE));
   if ($dbc !== FALSE) {
     $stmt = sqlsrv_query($dbc, "SELECT pw.weight_name, product_code FROM prf_products pp
@@ -112,14 +120,14 @@ function _callback_form(&$form, FormStateInterface $form_state, $form_id) {
                                     WHERE pr.prf_ID = '$prf' AND pr.deleted = 0 AND pr.archived = 0
                                     ORDER BY pr.ID DESC") or $logger->error(print_r(sqlsrv_errors(), TRUE));
     while ($prf_row = sqlsrv_fetch_array($stmt_prf, SQLSRV_FETCH_ASSOC)) {
-      $form['elements']['sample_spec']['flexbox_sample']['container_right_sample']['stitch_pattern']['#value'] = getTerm($prf_row['top_stitching_pattern'], 'stitch_pattern')->id();
+      $form['elements']['sample_spec']['flexbox_sample']['container_right_sample']['stitch_pattern']['#value'] = getTerm($prf_row['top_stitching_pattern'], 'stitch_pattern');
       $form['elements']['sample_spec']['flexbox_sample']['container_right_sample']['binding_colour']['#value'] = $prf_row['binding'];
       $form['elements']['sample_spec']['flexbox_sample']['container_left_sample']['filling_fibres_and_']['#value'] = $prf_row['filling'];
       $form['elements']['sample_spec']['flexbox_sample']['container_left_sample']['cover_fabric_tick_shell']['#value'] = $prf_row['fabric'];
-      $form['elements']['sample_spec']['flexbox_sample']['container_left_sample']['edge_finishing']['#value'] = getTerm($prf_row['edge_finishing'], 'edge_finish')->id();
+      $form['elements']['sample_spec']['flexbox_sample']['container_left_sample']['edge_finishing']['#value'] = getTerm($prf_row['edge_finishing'], 'edge_finish');
       if (isset($prf_row['care_label']) && !empty($prf_row['care_label'])) {
         $form['elements']['sample_spec']['flexbox_sample']['container_right_sample']['care_label_code']['#value'] = $prf_row['care_label'];
-        $form['elements']['sample_spec']['flexbox_sample']['container_right_sample']['care_label']['#value'] = getTerm('Yes', 'yes_no')->id();
+        $form['elements']['sample_spec']['flexbox_sample']['container_right_sample']['care_label']['#value'] = getTerm('Yes', 'yes_no');
       }
 
     }
@@ -129,6 +137,7 @@ function _callback_form(&$form, FormStateInterface $form_state, $form_id) {
 }
 
 function getTerm($name, $vocabulary) {
+  if (empty($name)) return '';
   $term = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => $vocabulary, 'name' => $name]);
   $term = reset($term);
   if (empty($term)) {
@@ -138,7 +147,7 @@ function getTerm($name, $vocabulary) {
     ]);
     $term->save();
   }
-  return $term;
+  return $term->id();
 }
 
 function get_last_order_number() {
