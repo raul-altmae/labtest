@@ -22,7 +22,7 @@ elements: |-
         '#title': 'Order number'
         '#title_display': inline
         '#readonly': true
-        '#required': true
+        '#default_value': '[webform_submission:sid]'
         '#min': 0
         '#step': 1
       country:
@@ -384,7 +384,7 @@ settings:
   draft_pending_multiple_message: ''
   confirmation_type: page
   confirmation_title: ''
-  confirmation_message: ''
+  confirmation_message: "New submission added to Sample Request.<br />\r\n<br />\r\nOrder nr [webform_submission:sid]"
   confirmation_url: ''
   confirmation_attributes: {  }
   confirmation_back: true
@@ -467,7 +467,7 @@ handlers:
     label: Email
     notes: ''
     handler_id: email
-    status: true
+    status: false
     conditions: {  }
     weight: 0
     settings:

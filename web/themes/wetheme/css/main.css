@@ -8,7 +8,7 @@ header.region-sticky{
 header {
   margin-bottom: 15px;
 }
-.visually-hidden {
+.visually-hidden, .webform-element--title-inline > label.visually-hidden {
   visibility: hidden;
   position: absolute;
   height: 0;
@@ -16,6 +16,9 @@ header {
   opacity: 0;
   overflow: hidden;
   display: none;
+}
+.form-item--no-label {
+  margin-bottom: 0;
 }
 .main-container{
   width: 1170px;
