@@ -233,7 +233,6 @@ function general_webform_submission_presave(EntityInterface $entity) {
   } else if ($new_data['order_number'] === $entity->id()) {
     $view_builder = \Drupal::entityTypeManager()->getViewBuilder($entity_type);
     $build = $view_builder->view($webform_submission, $view_mode);
-    $build['submission'] = $build;
     $body = render($build);
     \Drupal::service('plugin.manager.mail')->mail('general', 'user_notification', $site_settings->get('mail'), 'en', ['body' => trim($body), 'subject' => "Sample request"]);
   }
