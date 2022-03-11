@@ -29,7 +29,7 @@ function general_form_alter(&$form, FormStateInterface $form_state, $form_id) {
 
       $form['order_id'] = [
         '#type' => 'textfield',
-        '#title' => t('Order id'),
+        '#title' => t('Order number'),
         '#size' => 10,
         '#weight' => -1,
       ];
