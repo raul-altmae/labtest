@@ -197,3 +197,11 @@ td, th {
   min-width: 150px;
   max-width: 150px;
 }
+
+form#prefill-settings {
+  margin-bottom: 15px;
+}
+.form-item--order-id, input#edit-prefill {
+  margin-bottom: 10px;
+  margin-top: 5px;
+}
