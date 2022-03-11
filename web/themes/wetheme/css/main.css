@@ -205,3 +205,6 @@ form#prefill-settings {
   margin-bottom: 10px;
   margin-top: 5px;
 }
+.form-item--order-id {
+  width: 50%;
+}

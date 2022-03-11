@@ -28,9 +28,17 @@ function general_form_alter(&$form, FormStateInterface $form_state, $form_id) {
       $form['elements']['additional_info']['#attributes']['hidden'] = TRUE;
 
       $form['order_id'] = [
-        '#type' => 'textfield',
+        '#type' => 'entity_autocomplete',
         '#title' => t('Order number'),
-        '#size' => 10,
+        '#target_type' => 'webform_submission',
+        '#selection_handler' => 'views',
+        '#selection_settings' => [
+          'view' => [
+            'view_name' => 'prefill',
+            'display_name' => 'entity_reference_1',
+            'arguments' => []
+          ],
+        ],
         '#weight' => -1,
       ];
       $form['prefill'] = [
@@ -98,7 +106,13 @@ function _prefill_callback(&$form, FormStateInterface $form_state, $form_id) {
   // Prepare our textfield. check if the example select field has a selected option.
   $order_id = $form['order_id']['#value'];
   $order = WebformSubmission::load($order_id);
-  if (empty($order)) return $form['elements'];
+  if (empty($order)) {
+    $order_id = explode(':',explode('-',$form['order_id']['#value'])[0])[1];
+    $order = WebformSubmission::load($order_id);
+    if (empty($order)) {
+      return $form['elements'];
+    }
+  }
   $order_data = $order->getData();
   foreach ($form['elements'] as $flex_id => $flexbox) {
     if ($flex_id === 'flexbox') {
