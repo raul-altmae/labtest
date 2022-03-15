@@ -124,7 +124,7 @@ function wetheme_preprocess_views_view__submissions(&$variables) {
   $variables['exposed'] = [
     "#type" => "details",
     "#title" => t('Filters'),
-    '#open' => $empty_filter !== $query,
+    '#open' => $empty_filter !== $query && !empty($query),
     "#attributes" => ['class' => ['container-inline']],
     'exposed' => $variables['exposed'],
   ];
