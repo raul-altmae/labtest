@@ -95,7 +95,7 @@ function general_form_alter(&$form, FormStateInterface $form_state, $form_id) {
     $form['webform_submission_value_6'] = [
       '#type' => 'select',
       '#options' => $size_options,
-      '#default_value' => "All",
+      '#default_value' => "",
       '#size' => NULL,
       '#required' => FALSE,
     ];

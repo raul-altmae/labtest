@@ -11,8 +11,7 @@ function wetheme_preprocess(&$variables, $hook) {
   // Twig boolean to check if language module is enabled
   if (\Drupal::moduleHandler()->moduleExists('language')) {
     $variables['multilang'] = TRUE;
-  }
-  else {
+  } else {
     $variables['multilang'] = FALSE;
   }
   if (!\Drupal::currentUser()->isAnonymous()) {
@@ -55,13 +54,25 @@ function wetheme_theme_suggestions_table_alter(array &$suggestions, array $varia
 function wetheme_preprocess_table__webform_submission_table(&$variables) {
   if (isset($variables['rows'])) {
     foreach ($variables['rows'] as $key => $element) {
-      if (in_array($key, ['current_status', 'accuracy_to_spec', 'factory', 'fx_rate', 'courier_cost_usd', 'shipping_date', 'tracking', 'carrier_cost_usd', 'total_cost_of_order', 'china', 'comments'])) {
+      if (in_array($key, [
+        'current_status',
+        'accuracy_to_spec',
+        'factory',
+        'fx_rate',
+        'courier_cost_usd',
+        'shipping_date',
+        'tracking',
+        'carrier_cost_usd',
+        'total_cost_of_order',
+        'china',
+        'comments',
+      ])) {
         unset($variables['rows'][$key]);
         continue;
       }
       if (isset($element['cells'][1]['content']['#type']) && $element['cells'][1]['content']['#type'] === 'link') {
         $variables['rows'][$key]['cells'][1]['content'] = [
-          '#plain_text' => $element['cells'][1]['content']['#title']
+          '#plain_text' => $element['cells'][1]['content']['#title'],
         ];
       }
       /** @var \Drupal\Core\Template\Attribute $attribute */
@@ -78,7 +89,7 @@ function _sample_request_terms() {
     'sample_type',
     'customer',
     'product',
-    ''
+    '',
   ];
 }
 
@@ -86,11 +97,35 @@ function _sample_request_terms() {
  * Implements hook_preprocess_HOOK().
  */
 function wetheme_preprocess_views_view__submissions(&$variables) {
+  $empty_filter = [
+    "combine" => "",
+    "webform_submission_value" => "",
+    "webform_submission_value_1" => "All",
+    "webform_submission_value_2" => "",
+    "webform_submission_value_3" => "All",
+    "webform_submission_value_16" => "All",
+    "webform_submission_value_4" => "All",
+    "webform_submission_value_5" => "All",
+    "webform_submission_value_6" => "",
+    "webform_submission_value_7" => "All",
+    "webform_submission_value_8" => "All",
+    "webform_submission_value_9" => "All",
+    "webform_submission_value_10" => "All",
+    "webform_submission_value_11" => "All",
+    "webform_submission_value_12" => "All",
+    "webform_submission_value_13" => "",
+    "webform_submission_value_14" => "All",
+    "webform_submission_value_15" => "All",
+  ];
+  $query = \Drupal::request()->query->all();
+  if (isset($query['page'])) {
+    unset($query['page']);
+  }
   $variables['exposed'] = [
     "#type" => "details",
     "#title" => t('Filters'),
-    '#open' => \Drupal::request()->query->has('combine'),
+    '#open' => $empty_filter !== $query,
     "#attributes" => ['class' => ['container-inline']],
-    'exposed' => $variables['exposed']
+    'exposed' => $variables['exposed'],
   ];
 }
