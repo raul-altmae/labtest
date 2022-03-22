@@ -36,7 +36,7 @@ function general_form_alter(&$form, FormStateInterface $form_state, $form_id) {
           'view' => [
             'view_name' => 'prefill',
             'display_name' => 'entity_reference_1',
-            'arguments' => []
+            'arguments' => [],
           ],
         ],
         '#weight' => -1,
@@ -99,6 +99,7 @@ function general_form_alter(&$form, FormStateInterface $form_state, $form_id) {
       '#size' => NULL,
       '#required' => FALSE,
     ];
+    $form['#attached']['library'][] = 'file/drupal.file';
   }
 }
 
@@ -107,7 +108,7 @@ function _prefill_callback(&$form, FormStateInterface $form_state, $form_id) {
   $order_id = $form['order_id']['#value'];
   $order = WebformSubmission::load($order_id);
   if (empty($order)) {
-    $order_id = explode(':',explode('-',$form['order_id']['#value'])[0])[1];
+    $order_id = explode(':', explode('-', $form['order_id']['#value'])[0])[1];
     $order = WebformSubmission::load($order_id);
     if (empty($order)) {
       return $form['elements'];
@@ -256,7 +257,10 @@ function general_preprocess_views_view_field(&$variables) {
       /** @var \Drupal\webform\WebformSubmissionInterface $webform_submission */
       $webform_submission = $variables['row']->_entity;
       $edit_link = $webform_submission->toUrl('edit-form')->toString();
-      $variables['output'] = ['#markup' => "<a class='button' href='$edit_link'>Edit</a>"];
+      $markup = '<div class="dropbutton-wrapper"><div class="dropbutton-widget"><ul class="dropbutton dropbutton--extrasmall dropbutton--gin"><li class="edit dropbutton__item"><a href="' . $edit_link . '">Edit</a></li></ul>';
+      $variables['output'] = [
+        '#markup' => $markup,
+      ];
     }
   }
 }

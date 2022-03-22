@@ -208,3 +208,22 @@ form#prefill-settings {
 .form-item--order-id {
   width: 50%;
 }
+
+form#webform-submission-sample-request-edit-form .form-type--checkbox input.form-checkbox{
+  opacity: 1;
+  border: 1px solid var(--colorGinText);
+  width: 30px;
+  position: relative !important;
+}
+div.form-type-webform-image-file  label.webform-image-file-preview {
+  margin-left: 35px;
+}
+div.form-type-webform-image-file  div.form-type--boolean {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 0;
+}
+td.views-field-webform-submission-value-37, th.views-field-webform-submission-value-37{
+  min-width: 250px;
+  max-width: 250px;
+}
