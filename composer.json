@@ -1,13 +1,13 @@
 {
     "name": "webexpert/project_name",
-    "description": "Drupal 9 boilerplate by Web Expert",
+    "description": "Drupal 9",
     "type": "project",
     "license": "",
     "authors": [
         {
-            "name": "Web Expert OÜ",
-            "email": "info@we.ee",
-            "homepage": "https://we.ee",
+            "name": "Primanor OÜ",
+            "email": "raul@primanor.ee",
+            "homepage": "https://primanor.ee",
             "role": "Developer"
         }
     ],

@@ -1,7 +1,7 @@
 {
   "name": "tv",
   "version": "1.2.0",
-  "description": "Web Expert Drupal Base",
+  "description": "Drupal Base",
   "main": "web/themes/tv_base/js/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -11,7 +11,7 @@
   "engines": {
     "node": ">=12.0.0"
   },
-  "author": "Web Expert OÜ",
+  "author": "Primanor OÜ",
   "license": "ISC",
   "devDependencies": {
     "autoprefixer": "^9.8.6",
