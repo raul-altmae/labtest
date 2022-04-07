@@ -91,6 +91,7 @@ function general_form_alter(&$form, FormStateInterface $form_state, $form_id) {
     $form['webform_submission_value']['#type'] = 'date';
     $form['webform_submission_value_2']['#type'] = 'date';
     $form['webform_submission_value_13']['#type'] = 'date';
+    $form['webform_submission_value_17']['#type'] = 'date';
     # change size field to drop down
     $form['webform_submission_value_6'] = [
       '#type' => 'select',
