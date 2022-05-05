@@ -310,7 +310,7 @@ function general_webform_submission_presave(EntityInterface $entity) {
           $data['#rows'][$key.'_changed'] = $row;
           unset($data['#rows'][$key]);
         }
-      } else {
+      } elseif (!in_array($key, ['customer', 'product_ref'])) {
         unset($data['#rows'][$key]);
       }
     }
