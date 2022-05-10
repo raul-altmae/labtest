@@ -21,16 +21,16 @@ class GeneralController extends ControllerBase {
     /** @var \Drupal\webform\WebformSubmissionInterface $submission */
     foreach ($submissions as $submission) {
       $data = $submission->getData();
-      $this->processTerms($data, self::SAMPLE_REQUEST_TERMS);
+      $this->processTerms($data);
       $items[] = $data;
     }
     return JsonResponse::create(['items' => $items]);
   }
 
-  private function processTerms(array &$data, array $termFields) {
+  private function processTerms(array &$data) {
     foreach ($data as $key => $value) {
-      if (in_array($key, $termFields, TRUE)) {
-        $data[$key] = $this->getTermName($data[$key]);
+      if (in_array($key, self::SAMPLE_REQUEST_TERMS, TRUE)) {
+        $data[$key] = $this->getTermName($value);
       }
     }
   }
