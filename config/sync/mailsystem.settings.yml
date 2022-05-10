@@ -1,11 +1,11 @@
-theme: wetheme
-defaults:
-  sender: SMTPMailSystem
-  formatter: webform_php_mail
 _core:
   default_config_hash: IhwTepsVwtbtbcT5GzQKhCXDCRvbk3MNkWqPiuiZ10s
+theme: wetheme
+defaults:
+  sender: webform_php_mail
+  formatter: webform_php_mail
 modules:
   general:
     user_notification:
+      sender: webform_php_mail
       formatter: webform_php_mail
-      sender: SMTPMailSystem

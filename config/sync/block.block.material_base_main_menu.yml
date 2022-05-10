@@ -1,6 +1,6 @@
 uuid: 209455ba-5b85-4280-adbf-ee59204911bc
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - system.menu.main
@@ -12,15 +12,15 @@ _core:
   default_config_hash: kiRtuR8od38O8MRrCgaJ4OXiCOrivXMKS8lRMZ8sqXA
 id: material_base_main_menu
 theme: material_base
-region: navbar
+region: ''
 weight: -5
 provider: null
 plugin: 'system_menu_block:main'
 settings:
   id: 'system_menu_block:main'
   label: 'Main navigation'
-  provider: system
   label_display: '0'
+  provider: system
   level: 1
   depth: 1
   expand_all_items: false

@@ -1,3 +1,6 @@
+_core:
+  default_config_hash: OJG4afMPR2HDy_xKgze5n_6-X38wqFVC6p9CgjsKkxc
+langcode: en
 cache:
   page:
     max_age: 0
@@ -13,6 +16,3 @@ js:
   preprocess: true
   gzip: true
 stale_file_threshold: 2592000
-langcode: en
-_core:
-  default_config_hash: OJG4afMPR2HDy_xKgze5n_6-X38wqFVC6p9CgjsKkxc

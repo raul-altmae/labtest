@@ -1,3 +1,6 @@
+_core:
+  default_config_hash: 1QVkFsQrIL9rh366gY2t-D9_KmXVZZvMiAeo3Pygw_4
+langcode: en
 map:
   'no': nb
   pt: pt-pt
@@ -9,6 +12,3 @@ map:
   zh-cn: zh-hans
   zh-sg: zh-hans
   zh-chs: zh-hans
-langcode: en
-_core:
-  default_config_hash: 1QVkFsQrIL9rh366gY2t-D9_KmXVZZvMiAeo3Pygw_4

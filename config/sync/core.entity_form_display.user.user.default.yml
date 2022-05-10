@@ -20,9 +20,9 @@ content:
     region: content
   google_analytics:
     weight: 3
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
   language:
     weight: 0
     region: content

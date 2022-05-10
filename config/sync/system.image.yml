@@ -1,4 +1,4 @@
-toolkit: gd
-langcode: en
 _core:
   default_config_hash: 1fCHNRdOIktxDk4X-UwVl44JkUkEDodEtfhknN76gGI
+langcode: en
+toolkit: gd

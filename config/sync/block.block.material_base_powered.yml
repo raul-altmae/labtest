@@ -1,6 +1,6 @@
 uuid: 36e7f459-8a62-449a-96b8-060ec56f2bb0
 langcode: en
-status: true
+status: false
 dependencies:
   module:
     - system
@@ -10,13 +10,13 @@ _core:
   default_config_hash: sKnTa1u4jRXjtB6QjCILq6S4UNJk72ynj6C_rF-TUjE
 id: material_base_powered
 theme: material_base
-region: footer
+region: ''
 weight: -6
 provider: null
 plugin: system_powered_by_block
 settings:
   id: system_powered_by_block
   label: 'Powered by Drupal'
-  provider: system
   label_display: '0'
+  provider: system
 visibility: {  }

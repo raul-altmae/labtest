@@ -1,6 +1,6 @@
 uuid: 4c70c190-6794-4f7b-a08b-acc20495aa3e
 langcode: en
-status: true
+status: false
 dependencies:
   module:
     - system
@@ -10,13 +10,13 @@ _core:
   default_config_hash: nXYtSHM_l8fCSKN7bEgxQZNKMVQnIh1NQ0gHMZQOh1o
 id: material_base_mdc_content
 theme: material_base_mdc
-region: content
+region: ''
 weight: 0
 provider: null
 plugin: system_main_block
 settings:
   id: system_main_block
   label: 'Main page content'
-  provider: system
   label_display: '0'
+  provider: system
 visibility: {  }

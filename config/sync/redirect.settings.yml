@@ -1,3 +1,6 @@
+langcode: en
+_core:
+  default_config_hash: at8Gn6B7SRQ3YlrRzDF5dCvS8yUcs6P10078PVVx6ik
 auto_redirect: true
 default_status_code: 301
 passthrough_querystring: true
@@ -5,6 +8,3 @@ warning: false
 ignore_admin_path: false
 access_check: false
 route_normalizer_enabled: true
-langcode: en
-_core:
-  default_config_hash: at8Gn6B7SRQ3YlrRzDF5dCvS8yUcs6P10078PVVx6ik

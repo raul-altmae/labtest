@@ -1,7 +1,7 @@
+_core:
+  default_config_hash: oI7E83r92xC8NGRpPzcmx9cPikmYbYXwNa0QTG4hX7o
+langcode: en
 default_cron_limit: 50
 cron_worker_runtime: 15
 default_tracker: default
 tracking_page_size: 100
-langcode: en
-_core:
-  default_config_hash: oI7E83r92xC8NGRpPzcmx9cPikmYbYXwNa0QTG4hX7o

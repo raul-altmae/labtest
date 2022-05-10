@@ -1,7 +1,7 @@
+_core:
+  default_config_hash: QLUC2uNy0LH_GO-KLi8pQ0h4Of1KPZQ4sz_oBbbSUno
+langcode: en
 variants:
   default:
     label: Default
     weight: 0
-langcode: en
-_core:
-  default_config_hash: QLUC2uNy0LH_GO-KLi8pQ0h4Of1KPZQ4sz_oBbbSUno

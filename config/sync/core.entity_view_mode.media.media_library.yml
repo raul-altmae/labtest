@@ -2,11 +2,11 @@ uuid: 3dbab869-95e5-493a-a399-55931256d200
 langcode: en
 status: true
 dependencies:
+  module:
+    - media
   enforced:
     module:
       - media_library
-  module:
-    - media
 _core:
   default_config_hash: IggFqra8NAjb9CgujVEpwo3ctLr7IXAqp8jsjx8aepo
 id: media.media_library

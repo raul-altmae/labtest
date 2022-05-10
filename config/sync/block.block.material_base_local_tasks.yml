@@ -1,6 +1,6 @@
 uuid: c43145f2-8a50-4982-bea5-8d5922a87af6
 langcode: en
-status: true
+status: false
 dependencies:
   theme:
     - material_base
@@ -8,15 +8,15 @@ _core:
   default_config_hash: qxElHVJpIwFjvXZkY2A1eVin73I--etjxaQQ6EiwYTU
 id: material_base_local_tasks
 theme: material_base
-region: content
+region: ''
 weight: -40
 provider: null
 plugin: local_tasks_block
 settings:
   id: local_tasks_block
   label: Tabs
-  provider: core
   label_display: '0'
+  provider: core
   primary: true
   secondary: true
 visibility: {  }

@@ -1,6 +1,6 @@
 uuid: ff18c978-6ec9-45e9-8cca-52df9fec8303
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - system.menu.main
@@ -12,15 +12,15 @@ _core:
   default_config_hash: M2aE3rLZTVqtU0ZI3B21rtpRFVfSQmUojWnRMn0Q4DM
 id: material_base_mdc_overlay_menu
 theme: material_base_mdc
-region: overlay
+region: ''
 weight: 0
 provider: null
 plugin: 'system_menu_block:main'
 settings:
   id: 'system_menu_block:main'
   label: 'Main navigation'
-  provider: system
   label_display: '0'
+  provider: system
   level: 1
   depth: 2
   expand_all_items: true

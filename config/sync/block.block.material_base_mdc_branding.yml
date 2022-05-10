@@ -1,6 +1,6 @@
 uuid: f1f94d3c-b656-40ce-b9a6-a1cf6bdf2517
 langcode: en
-status: true
+status: false
 dependencies:
   module:
     - system
@@ -10,15 +10,15 @@ _core:
   default_config_hash: wB89mkJZBCla3TyOiNE7Fao4H7W6R8nSH4vqMIpa7fk
 id: material_base_mdc_branding
 theme: material_base_mdc
-region: navbar
+region: ''
 weight: -6
 provider: null
 plugin: system_branding_block
 settings:
   id: system_branding_block
   label: 'Site branding'
-  provider: system
   label_display: '0'
+  provider: system
   use_site_logo: true
   use_site_name: true
   use_site_slogan: true

@@ -1,3 +1,6 @@
+_core:
+  default_config_hash: qvxrO-SoNzIiwtY9-KwT_cDB5IuUbsMLWf6EBT-NXsQ
+langcode: en
 disabled: false
 field_template: false
 ft-default: default
@@ -7,6 +10,3 @@ classes:
   region: {  }
   field: {  }
 use_field_names: true
-langcode: en
-_core:
-  default_config_hash: qvxrO-SoNzIiwtY9-KwT_cDB5IuUbsMLWf6EBT-NXsQ

@@ -1,6 +1,6 @@
 uuid: c444dc93-df84-4af7-af4c-7f289cdb73a5
 langcode: en
-status: true
+status: false
 dependencies:
   module:
     - system
@@ -10,13 +10,13 @@ _core:
   default_config_hash: VBCsu3TNhjV8ub1A7SeAP7yRX4uqpZTL7yR1Qot5zRA
 id: material_base_messages
 theme: material_base
-region: messages
+region: ''
 weight: -6
 provider: null
 plugin: system_messages_block
 settings:
   id: system_messages_block
   label: 'Status messages'
-  provider: system
   label_display: '0'
+  provider: system
 visibility: {  }

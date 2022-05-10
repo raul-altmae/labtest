@@ -1,4 +1,4 @@
-autocomplete_max_occurrences: 0.9
-langcode: en
 _core:
   default_config_hash: YxdW5p5Eb6nf-MqkqibOaYtW4p5sNRSp6vQC05dv6ms
+langcode: en
+autocomplete_max_occurrences: 0.9

@@ -1,6 +1,6 @@
 uuid: 497ae849-f76c-420d-a5ec-cee18033e46e
 langcode: en
-status: true
+status: false
 dependencies:
   module:
     - system
@@ -10,13 +10,13 @@ _core:
   default_config_hash: IhnSsK-_sHAdKxm7R6R7owm7xmwE7f0K1KM9NTv2EWQ
 id: material_base_mdc_breadcrumbs
 theme: material_base_mdc
-region: breadcrumb
+region: ''
 weight: 0
 provider: null
 plugin: system_breadcrumb_block
 settings:
   id: system_breadcrumb_block
   label: Breadcrumbs
-  provider: system
   label_display: '0'
+  provider: system
 visibility: {  }

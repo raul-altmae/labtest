@@ -1,6 +1,6 @@
+_core:
+  default_config_hash: DdDe25lJ14rZMFuFFNEl7ng13scmWLN_xmr7oG7hoyM
+langcode: en
 maintain_index_table: true
 override_selector: false
 terms_per_page_admin: 100
-langcode: en
-_core:
-  default_config_hash: DdDe25lJ14rZMFuFFNEl7ng13scmWLN_xmr7oG7hoyM

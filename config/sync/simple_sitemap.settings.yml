@@ -1,3 +1,6 @@
+_core:
+  default_config_hash: cUmO8DVG2LAVJ0fWkYykq2RC5XoadCyGhffl7wCnK_s
+langcode: en
 max_links: 2000
 cron_generate: true
 cron_generate_interval: 0
@@ -12,6 +15,3 @@ excluded_languages: {  }
 enabled_entity_types:
   - node
   - menu_link_content
-langcode: en
-_core:
-  default_config_hash: cUmO8DVG2LAVJ0fWkYykq2RC5XoadCyGhffl7wCnK_s

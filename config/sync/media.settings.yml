@@ -1,7 +1,7 @@
+_core:
+  default_config_hash: 5Xy2C3MyHa_cjC03MHCesOzlJ7WDumU13h2JFm7UpF0
+langcode: en
 icon_base_uri: 'public://media-icons/generic'
 iframe_domain: ''
 oembed_providers_url: 'https://oembed.com/providers.json'
 standalone_url: false
-langcode: en
-_core:
-  default_config_hash: 5Xy2C3MyHa_cjC03MHCesOzlJ7WDumU13h2JFm7UpF0

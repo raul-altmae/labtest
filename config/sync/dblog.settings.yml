@@ -1,4 +1,4 @@
-row_limit: 1000
-langcode: en
 _core:
   default_config_hash: c_hcv1-0TG-5FDuZ2TYlhn-RIwpdx5b7vbj-ryVtLXs
+langcode: en
+row_limit: 1000

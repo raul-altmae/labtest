@@ -1,10 +1,13 @@
+_core:
+  default_config_hash: KbREgsHbxIlcRGYGb3JULKLQKqRE2nDoU0OGAr_rTYA
+langcode: en
 definitions:
   contact__site_page:
-    enabled: true
     menu_name: footer
     parent: ''
     weight: 0
     expanded: false
+    enabled: true
   standard__front_page:
     menu_name: main
     parent: ''
@@ -17,6 +20,3 @@ definitions:
     weight: -10
     expanded: false
     enabled: false
-langcode: en
-_core:
-  default_config_hash: KbREgsHbxIlcRGYGb3JULKLQKqRE2nDoU0OGAr_rTYA

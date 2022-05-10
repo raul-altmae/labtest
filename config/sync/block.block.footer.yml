@@ -17,8 +17,8 @@ plugin: 'block_content:44490435-5db3-4c3a-8467-1a2c78fc6cb9'
 settings:
   id: 'block_content:44490435-5db3-4c3a-8467-1a2c78fc6cb9'
   label: Footer
-  provider: block_content
   label_display: '0'
+  provider: block_content
   status: true
   info: ''
   view_mode: full

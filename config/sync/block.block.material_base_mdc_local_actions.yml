@@ -1,6 +1,6 @@
 uuid: 784b9c24-d7ae-4b29-97b0-5fc89443baa6
 langcode: en
-status: true
+status: false
 dependencies:
   theme:
     - material_base_mdc
@@ -8,13 +8,13 @@ _core:
   default_config_hash: 3rhQ3pxWOH-_7QPozpDQa2wBjv80zwKYSRqUjRIZLPY
 id: material_base_mdc_local_actions
 theme: material_base_mdc
-region: content
+region: ''
 weight: -20
 provider: null
 plugin: local_actions_block
 settings:
   id: local_actions_block
   label: 'Primary admin actions'
-  provider: core
   label_display: '0'
+  provider: core
 visibility: {  }

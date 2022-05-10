@@ -1,4 +1,4 @@
-purge_batch_size: 50
-langcode: en
 _core:
   default_config_hash: R8EscbaR1gXZSv8mQ4nDEMeC9XyMdGz2w6dy5QQkwy0
+langcode: en
+purge_batch_size: 50

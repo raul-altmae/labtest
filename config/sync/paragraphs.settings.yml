@@ -1,4 +1,4 @@
-show_unpublished: true
-langcode: en
 _core:
   default_config_hash: 1cyS8RHR-RW9ximR9FDfG4VE_OrYkPxvDyvIoZftnpc
+langcode: en
+show_unpublished: true

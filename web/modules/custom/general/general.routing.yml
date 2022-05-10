@@ -5,3 +5,11 @@ general.term_import:
     _form: 'Drupal\general\Form\TermImportForm'
   requirements:
     _permission: 'access content'
+
+general.submission.feed:
+  path: '/submissions/feed'
+  defaults:
+    _title: 'Feed'
+    _controller: '\Drupal\general\Controller\GeneralController::feed'
+  requirements:
+    _access: 'TRUE'

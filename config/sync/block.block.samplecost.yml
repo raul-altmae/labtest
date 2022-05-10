@@ -16,14 +16,14 @@ plugin: sample_cost
 settings:
   id: sample_cost
   label: Costs
-  provider: sample_cost
   label_display: visible
+  provider: sample_cost
 visibility:
   user_role:
     id: user_role
-    roles:
-      administrator: administrator
-      china: china
     negate: false
     context_mapping:
       user: '@user.current_user_context:current_user'
+    roles:
+      administrator: administrator
+      china: china
