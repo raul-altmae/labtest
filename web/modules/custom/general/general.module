@@ -11,6 +11,7 @@
 
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\file\Entity\File;
 use Drupal\taxonomy\Entity\Term;
 use Drupal\webform\Entity\WebformSubmission;
 
@@ -316,7 +317,8 @@ function general_webform_submission_presave(EntityInterface $entity) {
     }
     if (!empty($data['#rows'])) {
       $body = render($data);
-      \Drupal::service('plugin.manager.mail')->mail('general', 'user_notification', $site_settings->get('mail'), 'en', ['body' => trim($body), 'subject' => "Sample request $order_number has been changed"]);
+      $replacedBody = str_replace('_sid_', $entity->id(), $body);
+      \Drupal::service('plugin.manager.mail')->mail('general', 'user_notification', $site_settings->get('mail'), 'en', ['body' => trim($replacedBody), 'subject' => "Sample request $order_number has been changed"]);
     }
   } else if ($new_data['order_number'] === $entity->id()) {
     $view_builder = \Drupal::entityTypeManager()->getViewBuilder($entity_type);
