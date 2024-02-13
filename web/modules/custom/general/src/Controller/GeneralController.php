@@ -23,7 +23,6 @@ class GeneralController extends ControllerBase {
     foreach ($submissions as $submission) {
       $data = $submission->getData();
       $this->processTerms($data);
-      $data['required_date_of_arrival'] = DrupalDateTime::createFromFormat('Y-m-d', $data['required_date_of_arrival'])->format('c');
       $items[] = $data;
     }
     return JsonResponse::create(['items' => $items]);
