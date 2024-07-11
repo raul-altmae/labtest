@@ -163,7 +163,7 @@ function _callback_form(&$form, FormStateInterface $form_state, $form_id) {
   // Return the prepared textfield.
 
   $logger = \Drupal::logger('prf_update');
-  $host = 'WIN-UJRRM9G04P6\SQL';
+  $host = '87364F3\SQL';
   $username = 'tahukas_viewer';
   $password = 'Ainult lugemisõigustega';
 
