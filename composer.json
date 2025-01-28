@@ -13,6 +13,21 @@
     ],
     "repositories": [
         {
+            "type": "package",
+            "package": {
+                "name": "jquery/icheck",
+                "version": "1.0.2",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "jquery.icheck"
+                },
+                "dist": {
+                    "url": "https://github.com/dargullin/icheck/zipball/refs/heads/1.0.2",
+                    "type": "zip"
+                }
+            }
+        },
+        {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
         },
@@ -201,6 +216,7 @@
         "drupal/webform": "^6.0",
         "drupal/webform_views": "^5.0@alpha",
         "drush/drush": "^10.6",
+        "jquery/icheck": "1.0.2",
         "kint-php/kint": "^3.3",
         "npm-asset/dropzone": "^5.7",
         "npm-asset/jquery-ui-touch-punch": "^0.2.3",
@@ -216,7 +232,16 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "config": {
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "cweagans/composer-patches": true,
+            "composer/installers": true,
+            "drupal/core-composer-scaffold": true,
+            "drupal/core-project-message": true,
+            "wikimedia/composer-merge-plugin": true,
+            "drupal/console-extend-plugin": true,
+            "oomphinc/composer-installers-extender": true
+        }
     },
     "extra": {
         "drupal-scaffold": {
@@ -302,7 +327,8 @@
         "merge-plugin": {
             "include": [
                 "web/modules/contrib/webform/composer.libraries.json"
-            ]
+            ],
+            "ignore-duplicates": true
         },
         "patches": {
         }

@@ -1,26 +1,7 @@
-<svg
-     version="1.1"
-     xmlns="http://www.w3.org/2000/svg"
-     xmlns:xlink="http://www.w3.org/1999/xlink"
-     width="32px" height="32px"
-     viewBox="0 0 32 32" preserveAspectRatio="none">
-   <g>
-<image width="32" height="32" xlink:href="data:image/png;base64,
-iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJ
-bWFnZVJlYWR5ccllPAAAAohJREFUeNrEl1tIVGEQx12L0BQjoXwpoRfxIQUJuhAIvVRLIRQELYj1
-oKDgpQgVNQhBChQfLFDLoovVS0RQYuqLPUgFgTcQia5CSBBERUiKuv0+GGGJPd/l7Nkc+DNn98w3
-8/++mXNmTigajaasp4T8Ejhx+GIWavOTkbaviRBITWBtIbgDkfT1InAGHAGDkNj2X1NAwFLU3ZgN
-fATnSMezpBIgcAaqWRBPHoFLEJlNVgpWRC943D8FJiDaA3IDOQEc5aNK5Ocou3vDf3u5HgFbNEu/
-gzrs7/smQKAa1BWQEfN3L06ruFcmdWCSa+A8a1acUkCAetTVf4IrqeReBIf3pPhMojbR41QDBDiO
-atc4LRU9ZVk7FXKaZgLyhus2OExbS6FDAV+OV5jxTqAa7DQ4e4qzTegiBwKZoFFLAKdqZ+UGR8Pk
-vwu9A7i+AU8TY6vuBNTjtcvgJB0nJyGhCvAgeO9AIBsc0hHYb+GkGDyGxG1ITHIdlmfeVop1BAoc
-HJ2FxENIqBOodVhXoCOw3TGnEfVCgsQDrmcc0uBJYNVHR20S3R/EPDDvw0c+p6AK94Wl/aKOwLTP
-uSIPfAHLFrYfdAReJzBZ2abvpY7ABHjrg8AcyAEbDXZL4LknAapZGdxyDD4vpPdZ2A7JC0zbC3pl
-R7bSJ70+YjFNtVoNJNKObQbMcXAA7AFjhhGvA6INVvMAhgOoBkNwNQsck5Z8wxB8wGuQ9VwEiQ7U
-BSmcWPkGOiXnv2QS3q0Jru6rCWrZ71BaKH0/JLXxCmd/+F8RuKkJ/gO0YNsd6IcJgcPSfI56mLxT
-3RJcJ/jnoD9MNsg3oZobcqWxqGf/J/gkdTFJ4N9J/zoOSv4KMAC++teHNUg1rQAAAABJRU5ErkJg
-gg==
-"/>
-   </g>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="16" height="16">
+  <path d="M0 0 C5.28 0 10.56 0 16 0 C16 5.28 16 10.56 16 16 C10.72 16 5.44 16 0 16 C0 10.72 0 5.44 0 0 Z " fill="#57565B" transform="translate(0,0)"/>
+  <path d="M0 0 C10.75 0.875 10.75 0.875 13 2 C12.67 2.99 12.34 3.98 12 5 C12 4.34 12 3.68 12 3 C10.35 3 8.7 3 7 3 C7 4.32 7 5.64 7 7 C8.32 6.67 9.64 6.34 11 6 C10.67 7.32 10.34 8.64 10 10 C9.01 9.34 8.02 8.68 7 8 C7 9.65 7 11.3 7 13 C7.66 13 8.32 13 9 13 C9 13.66 9 14.32 9 15 C4.545 15.495 4.545 15.495 0 16 C0 10.72 0 5.44 0 0 Z " fill="#5B5B5F" transform="translate(0,0)"/>
+  <path d="M0 0 C3.3 0 6.6 0 10 0 C9.67 0.99 9.34 1.98 9 3 C9 2.34 9 1.68 9 1 C7.35 1 5.7 1 4 1 C4 2.32 4 3.64 4 5 C5.32 4.67 6.64 4.34 8 4 C7.67 5.32 7.34 6.64 7 8 C6.01 7.34 5.02 6.68 4 6 C4 7.65 4 9.3 4 11 C4.66 11.33 5.32 11.66 6 12 C4.02 12 2.04 12 0 12 C0.66 11.67 1.32 11.34 2 11 C2 7.7 2 4.4 2 1 C1.34 0.67 0.68 0.34 0 0 Z " fill="#E1E1E2" transform="translate(3,2)"/>
+  <path d="M0 0 C1.65 0 3.3 0 5 0 C4.34 1.32 3.68 2.64 3 4 C2.01 4 1.02 4 0 4 C0 2.68 0 1.36 0 0 Z " fill="#616164" transform="translate(7,3)"/>
 </svg>
-

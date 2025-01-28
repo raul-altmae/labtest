@@ -57,7 +57,7 @@ header {
 }
 
 .webform-element--title-inline .form-text, .webform-element--title-inline .form-element {
-  width: 100%;
+  width: 100%!important;
 }
 .footer {
   margin-top: 45px;
@@ -96,6 +96,8 @@ h1.page-title {
 }
 .block-system-branding-block {
   float: left;
+  display: flex;
+  align-items: center;
 }
 .site-name, .site-logo {
   float: left;
@@ -106,12 +108,13 @@ h1.page-title {
 .site-logo {
   margin-right: 0;
   padding-left: 0;
-  margin-top: 8px;
+  width: 130px;
 }
 .site-name {
   padding: 15px 15px;
   font-size: 18px;
   line-height: 20px;
+  margin-left: 1rem;
 }
 
 .site-name a {

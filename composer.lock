@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1f492bc454f30fcdb7492e4f6988a186",
+    "content-hash": "0a96c8b601f250af075e1da916eb6c68",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -1467,15 +1467,6 @@
                 "resolver"
             ],
             "time": "2012-10-28T21:08:28+00:00"
-        },
-        {
-            "name": "dimsemenov/photoswipe",
-            "version": "4.1.1",
-            "dist": {
-                "type": "zip",
-                "url": "https://github.com/dimsemenov/PhotoSwipe/archive/v4.1.1.zip"
-            },
-            "type": "drupal-library"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -6415,13 +6406,10 @@
         },
         {
             "name": "jquery/icheck",
-            "version": "1.0.2 ",
+            "version": "1.0.2",
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/fronteed/icheck/archive/1.0.2.zip"
-            },
-            "require": {
-                "composer/installers": "~1.0"
+                "url": "https://github.com/dargullin/icheck/zipball/refs/heads/1.0.2"
             },
             "type": "drupal-library",
             "extra": {
@@ -11056,5 +11044,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "1.1.0"
+    "plugin-api-version": "2.6.0"
 }

@@ -1,0 +1,7 @@
+lab_form:
+  version: VERSION
+  js:
+    js/labtest.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
