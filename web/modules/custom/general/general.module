@@ -43,7 +43,6 @@ function general_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   if ($form_id === 'views_exposed_form' && $route_name === 'view.submissions.page_1') {
     # change date fields to date field
     $form['webform_submission_value']['#type'] = 'date';
-    dump($form);
     # change size field to drop down
     $form['#attached']['library'][] = 'file/drupal.file';
   }
