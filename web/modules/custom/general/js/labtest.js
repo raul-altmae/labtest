@@ -22,6 +22,10 @@ jQuery(document).ready(() => {
 
   jQuery("table[data-drupal-selector|='edit-quantity-items'] input.form-number").on('change', calcTotalQuantity);
 
+  jQuery("#edit-customer").on('change', setTests);
+
+  jQuery("#edit-container-testing").on('change', setTestValue);
+
   jQuery("#edit-return-to-sender").on('change', function () {
     const comments = jQuery("#edit-comments")
     const testingCompany = jQuery("#edit-testing-company").val();
@@ -39,9 +43,38 @@ ${requestedByName}`;
         comments.data('requestedBy', requestedBy)
       }
     }
-
-  })
+  });
+  setTests();
 });
+
+function setTestValue() {
+  const editTests = jQuery("#edit-tests");
+  const testingValues = jQuery(".testingValues").filter(function() {
+    return this.checked;
+  }).map(function() {
+    return jQuery(this).val();
+  }).get();
+  editTests.val(testingValues.join("\n"));
+}
+
+function setTests() {
+  const testing = jQuery("#edit-container-testing");
+  const editTests = jQuery("#edit-tests");
+  const testValues = editTests.val().split("\n");
+  testing.empty();
+  editTests.val('');
+  for (const test of drupalSettings.tests[jQuery("#edit-customer").val()]) {
+    const checked = testValues.includes(test);
+    testing.append(`
+        <div class="webform-element--title-inline form-type-checkbox js-form-item form-item js-form-type-checkbox form-type--checkbox form-type--boolean">
+          <input data-drupal-selector="edit-test" type="checkbox" id="edit-${test}" name="${test}" value="${test}" class="form-checkbox form-boolean form-boolean--type-checkbox testingValues" ${checked ? 'checked' : ''}>
+          <span class="checkbox-toggle">
+            <span class="checkbox-toggle__inner"></span>
+          </span>
+          <label for="edit-${test}" class="form-item__label option">${test}</label>
+      </div>`);
+  }
+}
 
 function calcTotalQuantity()  {
   const inputName = jQuery(this).attr('class').split(' ')[0];

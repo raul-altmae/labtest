@@ -212,12 +212,6 @@ form#prefill-settings {
   width: 50%;
 }
 
-form#webform-submission-sample-request-edit-form .form-type--checkbox input.form-checkbox{
-  opacity: 1;
-  border: 1px solid var(--colorGinText);
-  width: 30px;
-  position: relative !important;
-}
 div.form-type-webform-image-file  label.webform-image-file-preview {
   margin-left: 35px;
 }

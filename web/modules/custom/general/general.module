@@ -20,7 +20,7 @@ use Drupal\webform\Entity\WebformSubmission;
  */
 function general_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   $route_name = \Drupal::routeMatch()->getRouteName();
-  if ($form_id === 'webform_submission_sample_request_add_form') {
+  if ($form_id === 'webform_submission_sample_request_add_form' || $form_id === 'webform_submission_sample_request_edit_form') {
     $form['#attached']['library'][] = 'general/lab_form';
     $testing_companies = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'testing_company']);
     $testing_companies_map = [];
@@ -32,8 +32,15 @@ function general_form_alter(&$form, FormStateInterface $form_state, $form_id) {
     foreach ($requested_by_users as $user) {
       $requested_by_map[$user->id()] = $user->get('field_contacts')->value;
     }
+
+    $customers = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'customer']);
+    $tests = [];
+    foreach ($customers as $customer) {
+      $tests[$customer->id()] = array_map('trim', explode("\r\n",$customer->get('field_tests')->value));
+    }
     $form['#attached']['drupalSettings']['testingCompanies'] = $testing_companies_map;
     $form['#attached']['drupalSettings']['requestedBy'] = $requested_by_map;
+    $form['#attached']['drupalSettings']['tests'] = $tests;
 //    $form['elements']['flexbox']['container_left']['order_number']['#attributes']['hidden'] = TRUE;
 //    $form['elements']['flexbox']['container_left']['order_number']["#title_display"] = 'invisible';
     if ($route_name === 'entity.webform.canonical') {
