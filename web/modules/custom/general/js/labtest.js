@@ -64,8 +64,9 @@ function setTests() {
   testing.empty();
   editTests.val('');
   for (const test of drupalSettings.tests[jQuery("#edit-customer").val()]) {
-    const checked = testValues.includes(test);
-    testing.append(`
+    if (test !== '') {
+      const checked = testValues.includes(test);
+      testing.append(`
         <div class="webform-element--title-inline form-type-checkbox js-form-item form-item js-form-type-checkbox form-type--checkbox form-type--boolean">
           <input data-drupal-selector="edit-test" type="checkbox" id="edit-${test}" name="${test}" value="${test}" class="form-checkbox form-boolean form-boolean--type-checkbox testingValues" ${checked ? 'checked' : ''}>
           <span class="checkbox-toggle">
@@ -73,6 +74,7 @@ function setTests() {
           </span>
           <label for="edit-${test}" class="form-item__label option">${test}</label>
       </div>`);
+    }
   }
 }
 
