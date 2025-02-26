@@ -70,6 +70,7 @@ function setTests() {
           return JSON.parse(item);
         });
         const testValue = testValues.find((value) => value.name === test);
+        if (!testValue) continue;
         testing.append(
           `<div data-drupal-selector="edit-flexbox-${test}" class="webform-flexbox js-webform-flexbox js-form-wrapper grow justify-between form-wrapper items-center" id="edit-flexbox-${test}"><div class="grow justify-start webform-flex"><div class="webform-flex--container"><div class="form-type-checkbox js-form-item form-item js-form-type-checkbox form-type--checkbox form-type--boolean js-form-item-test form-item--test">
               <input data-drupal-selector="edit-${test}" type="checkbox" id="edit-${test}" name="${test}" value="${test}" class="form-checkbox form-boolean form-boolean--type-checkbox testingValues" checked disabled>
