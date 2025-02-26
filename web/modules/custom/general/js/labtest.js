@@ -42,7 +42,7 @@ function setTestValue() {
     return this.checked;
   }).map(function() {
     const name = jQuery(this).val();
-    return JSON.stringify({name: name, testingResult: document.getElementById(`edit-${name}-results`).value, passed: document.getElementById(`edit-${name}-passed`).checked});
+    return JSON.stringify({name: name, testingResult: document.getElementById(`edit-${name}-results`)?.value ?? '', passed: document.getElementById(`edit-${name}-passed`)?.checked ?? false});
   }).get();
   editTestResults.val(testingResults.join("\n"));
 
@@ -50,7 +50,7 @@ function setTestValue() {
     return this.checked;
   }).filter(function() {
     const name = jQuery(this).val();
-    return !document.getElementById(`edit-${name}-passed`).checked;
+    return !document.getElementById(`edit-${name}-passed`)?.checked;
   }).map(function() {
     const name = jQuery(this).val();
     const result = document.getElementById(`edit-${name}-results`).value;
@@ -62,14 +62,14 @@ function setTestValue() {
 function setTests() {
   const testing = jQuery("#edit-container-testing");
   const editTestResults = jQuery("#edit-test-results");
-  const testValues = editTestResults.val().split("\n").map(function(item) {
-    return JSON.parse(item);
-  });
   testing.empty();
   for (const test of drupalSettings.tests[jQuery("#edit-customer").val()]) {
     if (test !== '') {
-      const testValue = testValues.find((value) => value.name === test);
       if (drupalSettings.editForm) {
+        const testValues = editTestResults.val().split("\n").map(function(item) {
+          return JSON.parse(item);
+        });
+        const testValue = testValues.find((value) => value.name === test);
         testing.append(
           `<div data-drupal-selector="edit-flexbox-${test}" class="webform-flexbox js-webform-flexbox js-form-wrapper grow justify-between form-wrapper items-center" id="edit-flexbox-${test}"><div class="grow justify-start webform-flex"><div class="webform-flex--container"><div class="form-type-checkbox js-form-item form-item js-form-type-checkbox form-type--checkbox form-type--boolean js-form-item-test form-item--test">
               <input data-drupal-selector="edit-${test}" type="checkbox" id="edit-${test}" name="${test}" value="${test}" class="form-checkbox form-boolean form-boolean--type-checkbox testingValues" checked disabled>
@@ -95,7 +95,7 @@ function setTests() {
       } else {
         testing.append(`
           <div class="webform-element--title-inline form-type-checkbox js-form-item form-item js-form-type-checkbox form-type--checkbox form-type--boolean">
-            <input data-drupal-selector="edit-test" type="checkbox" id="edit-${test}" name="${test}" value="${test}" class="form-checkbox form-boolean form-boolean--type-checkbox testingValues" ${testValue.checked ? 'checked' : ''}>
+            <input data-drupal-selector="edit-test" type="checkbox" id="edit-${test}" name="${test}" value="${test}" class="form-checkbox form-boolean form-boolean--type-checkbox testingValues">
             <span class="checkbox-toggle">
               <span class="checkbox-toggle__inner"></span>
             </span>
