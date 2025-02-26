@@ -1,26 +1,5 @@
 (function ($, Drupal, drupalSettings) {
 jQuery(document).ready(() => {
-  jQuery('#edit-client-protocol-name').on( "change", function() {
-    const optionsObject = {
-      '548': '556',
-      '552': '553',
-      '549': '556',
-      '547': '557',
-      '550': '554',
-      '551': '555'
-    };
-    jQuery('#edit-version-').val(optionsObject[jQuery(this).val()]).change();
-  });
-  // Add on change event for quantity table calculations
-  jQuery('.order-qty-units, .units-packed-in-cartons-qty').on("change", function() {
-    const index = jQuery(this).attr("id").split('-')[3];
-    cartonsPercentage(index);
-    unitsNotPacked(index);
-    calculateTotalPercentage();
-  });
-
-
-  jQuery("table[data-drupal-selector|='edit-quantity-items'] input.form-number").on('change', calcTotalQuantity);
 
   jQuery("#edit-customer").on('change', setTests);
 
@@ -49,140 +28,82 @@ ${requestedByName}`;
 
 function setTestValue() {
   const editTests = jQuery("#edit-tests");
-  const testingValues = jQuery(".testingValues").filter(function() {
+  const editTestResults = jQuery("#edit-test-results");
+  const editTestFailed = jQuery("#edit-test-failed");
+  const tests = jQuery(".testingValues");
+  const testingValues = tests.filter(function() {
     return this.checked;
   }).map(function() {
     return jQuery(this).val();
   }).get();
   editTests.val(testingValues.join("\n"));
+
+  const testingResults = tests.filter(function() {
+    return this.checked;
+  }).map(function() {
+    const name = jQuery(this).val();
+    return JSON.stringify({name: name, testingResult: document.getElementById(`edit-${name}-results`).value, passed: document.getElementById(`edit-${name}-passed`).checked});
+  }).get();
+  editTestResults.val(testingResults.join("\n"));
+
+  const testingFailed = tests.filter(function() {
+    return this.checked;
+  }).filter(function() {
+    const name = jQuery(this).val();
+    return !document.getElementById(`edit-${name}-passed`).checked;
+  }).map(function() {
+    const name = jQuery(this).val();
+    const result = document.getElementById(`edit-${name}-results`).value;
+    return `${name}: ${result}`;
+  }).get();
+  editTestFailed.val(testingFailed.join("\n"));
 }
 
 function setTests() {
   const testing = jQuery("#edit-container-testing");
-  const editTests = jQuery("#edit-tests");
-  const testValues = editTests.val().split("\n");
+  const editTestResults = jQuery("#edit-test-results");
+  const testValues = editTestResults.val().split("\n").map(function(item) {
+    return JSON.parse(item);
+  });
   testing.empty();
-  editTests.val('');
   for (const test of drupalSettings.tests[jQuery("#edit-customer").val()]) {
     if (test !== '') {
-      const checked = testValues.includes(test);
-      testing.append(`
-        <div class="webform-element--title-inline form-type-checkbox js-form-item form-item js-form-type-checkbox form-type--checkbox form-type--boolean">
-          <input data-drupal-selector="edit-test" type="checkbox" id="edit-${test}" name="${test}" value="${test}" class="form-checkbox form-boolean form-boolean--type-checkbox testingValues" ${checked ? 'checked' : ''}>
-          <span class="checkbox-toggle">
-            <span class="checkbox-toggle__inner"></span>
-          </span>
-          <label for="edit-${test}" class="form-item__label option">${test}</label>
-      </div>`);
+      const testValue = testValues.find((value) => value.name === test);
+      if (drupalSettings.editForm) {
+        testing.append(
+          `<div data-drupal-selector="edit-flexbox-${test}" class="webform-flexbox js-webform-flexbox js-form-wrapper grow justify-between form-wrapper items-center" id="edit-flexbox-${test}"><div class="grow justify-start webform-flex"><div class="webform-flex--container"><div class="form-type-checkbox js-form-item form-item js-form-type-checkbox form-type--checkbox form-type--boolean js-form-item-test form-item--test">
+              <input data-drupal-selector="edit-${test}" type="checkbox" id="edit-${test}" name="${test}" value="${test}" class="form-checkbox form-boolean form-boolean--type-checkbox testingValues" checked disabled>
+              <span class="checkbox-toggle">
+                <span class="checkbox-toggle__inner"></span>
+              </span>
+              <label for="edit-${test}" class="form-item__label option">${test}</label>
+              </div>
+            </div></div>
+
+            <div class="webform-flex flex-auto"><div class="webform-flex--container"><div class="form-type-textfield js-form-item form-item js-form-type-textfield form-type--textfield js-form-item-${test}-results form-item--${test}-results form-item--no-label">
+                <label for="edit-${test}-results" class="form-item__label visually-hidden">test results</label>
+                <input data-drupal-selector="edit-${test}-results" type="text" id="edit-${test}-results" name="${test}_results" value="${testValue.testingResult}" size="60" maxlength="255" class="form-text form-element form-element--type-text form-element--api-textfield">
+            </div>
+            </div></div><div class="webform-flex flex-auto justify-end"><div class="webform-flex--container"><div class="webform-element--title-inline form-type-checkbox js-form-item form-item js-form-type-checkbox form-type--checkbox form-type--boolean js-form-item-passed form-item--passed">
+                <input data-drupal-selector="edit-${test}-passed" type="checkbox" id="edit-${test}-passed" name="${test}-passed" value="1" class="form-checkbox form-boolean form-boolean--type-checkbox" ${testValue.passed ? 'checked' : ''}>
+                <span class="checkbox-toggle">
+                    <span class="checkbox-toggle__inner"></span>
+                </span>
+                <label for="edit-${test}-passed" class="form-item__label option">Passed</label>
+            </div>
+            </div></div></div>`);
+      } else {
+        testing.append(`
+          <div class="webform-element--title-inline form-type-checkbox js-form-item form-item js-form-type-checkbox form-type--checkbox form-type--boolean">
+            <input data-drupal-selector="edit-test" type="checkbox" id="edit-${test}" name="${test}" value="${test}" class="form-checkbox form-boolean form-boolean--type-checkbox testingValues" ${testValue.checked ? 'checked' : ''}>
+            <span class="checkbox-toggle">
+              <span class="checkbox-toggle__inner"></span>
+            </span>
+            <label for="edit-${test}" class="form-item__label option">${test}</label>
+          </div>`);
+      }
+
     }
   }
 }
-
-function calcTotalQuantity()  {
-  const inputName = jQuery(this).attr('class').split(' ')[0];
-  let totalName = '';
-  switch (inputName) {
-    case 'order-qty-units':
-      totalName = '#edit-total-order-qty';
-      break;
-    case 'shipment-qty-units':
-      totalName = '#edit-total-shipment-quantity';
-      break;
-    case 'shipment-qty-carton':
-      totalName = '#edit-total-shipment-quantity-carton';
-      break;
-    case 'presented_qty_for_inspection':
-      totalName = '#edit-present-quantity';
-      break;
-    case 'units-packed-in-cartons-qty':
-      totalName = '#edit-units-in-cartons';
-      break;
-  }
-  calculateQuantityTotal(`.${inputName}`, totalName);
-}
-
-  function calcAllTotalQuantity()  {
-    calculateQuantityTotal(`.order-qty-units`, '#edit-total-order-qty');
-    calculateQuantityTotal(`.shipment-qty-units`, '#edit-total-shipment-quantity');
-    calculateQuantityTotal(`.shipment-qty-carton`, '#edit-total-shipment-quantity-carton');
-    calculateQuantityTotal(`.presented_qty_for_inspection`, '#edit-present-quantity');
-    calculateQuantityTotal(`.units-packed-in-cartons-qty`, '#edit-units-in-cartons');
-  }
-  function calcAllTotalDefects()  {
-    calculateQuantityTotal(`.defect-critical`, `#edit-total-critical`);
-    calculateQuantityTotal(`.defect-major`, `#edit-total-major`);
-    calculateQuantityTotal(`.defect-minor`, `#edit-total-minor`);
-    const result = jQuery('#edit-result-value');
-    if (Number(jQuery('#edit-total-minor').val())+ Number(jQuery('#edit-total-major').val()) + Number(jQuery('#edit-total-critical').val()) > 0 ){
-      result.val('FAIL');
-    } else {
-      result.val('PASS');
-    }
-  }
-
-function calcTotalDefects()  {
-  const defectLevel = jQuery(this).attr('class').split(' ')[0].split('-')[1];
-  calculateQuantityTotal(`.defect-${defectLevel}`, `#edit-total-${defectLevel}`);
-  const result = jQuery('#edit-result-value');
-  if (jQuery(this).val() > 0) {
-    result.val('FAIL');
-  } else {
-    result.val('PASS');
-  }
-}
-
-function calcQuantity() {
-  const index = jQuery(this).attr("id").split('-')[3];
-  cartonsPercentage(index);
-  unitsNotPacked(index);
-  calculateTotalPercentage();
-}
-
-function cartonsPercentage(index) {
-  const orderQtyUnits = jQuery(`input[name|='quantity[items][${index}][order_qty_units]']`).val();
-  const unitsPacketQTY = jQuery(`input[name|='quantity[items][${index}][units_packed_in_cartons_qty]']`).val();
-  const packetPercentageValue = (unitsPacketQTY / orderQtyUnits)  * 100;
-  const percentageString = !isNaN(packetPercentageValue) ? `${Math.round(packetPercentageValue)}%` : '0%'
-
-  jQuery(`input[name|='quantity[items][${index}][units_packed_in_cartons_]']`).val(percentageString);
-}
-
-function unitsNotPacked(index) {
-  const orderQtyUnits = jQuery(`input[name|='quantity[items][${index}][order_qty_units]']`).val();
-  const unitsPacketQTY = jQuery(`input[name|='quantity[items][${index}][units_packed_in_cartons_qty]']`).val();
-  const qty = orderQtyUnits - unitsPacketQTY;
-  const percentage = (qty / orderQtyUnits)  * 100;
-  const percentageString = !isNaN(percentage) ? `${Math.round(percentage)}%` : '0%'
-
-  jQuery(`input[name|='quantity[items][${index}][units_finished_not_packed_qty]']`).val(qty);
-  jQuery(`input[name|='quantity[items][${index}][units_finished_not_packed_]']`).val(percentageString);
-}
-
-function calculateQuantityTotal(fieldClass, totalId) {
-  let orderQtyTotal = 0;
-  jQuery(fieldClass).each(function () {
-    orderQtyTotal += Number(jQuery(this).val());
-  })
-  jQuery(totalId).val(orderQtyTotal);
-}
-
-function calculateTotalPercentage() {
-  const orderQtyUnits = jQuery(`#edit-total-order-qty`).val();
-  const unitsPacketQTY = jQuery(`#edit-units-in-cartons`).val();
-  const packetPercentageValue = (unitsPacketQTY / orderQtyUnits)  * 100;
-  const percentageString = !isNaN(packetPercentageValue) ? `${Math.round(packetPercentageValue)}%` : '0%'
-
-  const qty = orderQtyUnits - unitsPacketQTY;
-  const percentage = (qty / orderQtyUnits)  * 100;
-  const percentagePackageString = !isNaN(percentage) ? `${Math.round(percentage)}%` : '0%'
-
-  jQuery(`#edit-units-in-cartons-`).val(percentageString);
-  jQuery(`#edit-units-not-packaged-qty`).val(qty);
-  jQuery(`#edit-units-not-packaged-`).val(percentagePackageString);
-}
-
-  function defectCode(index) {
-    const defectDescription = jQuery(`select[name|='defect[items][${index}][defect_description]']`).val();
-    jQuery(`input[name|='defect[items][${index}][defect_code]']`).val(drupalSettings.defectCodes[defectDescription]);
-  }
 })(jQuery, Drupal, drupalSettings);

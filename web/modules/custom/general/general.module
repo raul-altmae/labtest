@@ -41,6 +41,7 @@ function general_form_alter(&$form, FormStateInterface $form_state, $form_id) {
     $form['#attached']['drupalSettings']['testingCompanies'] = $testing_companies_map;
     $form['#attached']['drupalSettings']['requestedBy'] = $requested_by_map;
     $form['#attached']['drupalSettings']['tests'] = $tests;
+    $form['#attached']['drupalSettings']['editForm'] = $form_id === 'webform_submission_sample_request_edit_form';
 //    $form['elements']['flexbox']['container_left']['order_number']['#attributes']['hidden'] = TRUE;
 //    $form['elements']['flexbox']['container_left']['order_number']["#title_display"] = 'invisible';
     if ($route_name === 'entity.webform.canonical') {

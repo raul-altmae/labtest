@@ -211,7 +211,24 @@ form#prefill-settings {
 .form-item--order-id {
   width: 50%;
 }
-
+.grow {
+  flex-grow: 1;
+}
+.items-center {
+  align-items: center;
+}
+.justify-start {
+  justify-content: flex-end;
+}
+.justify-end {
+  justify-content: flex-end;
+}
+.justify-between {
+  justify-content: space-between;
+}
+.flex-auto {
+  flex: 0 0 auto;
+}
 div.form-type-webform-image-file  label.webform-image-file-preview {
   margin-left: 35px;
 }
