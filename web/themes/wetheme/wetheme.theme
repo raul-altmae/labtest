@@ -1,5 +1,7 @@
 <?php
 
+use Drupal\taxonomy\Entity\Term;
+
 /**
  * Implements hook_preprocess().
  */
@@ -52,34 +54,83 @@ function wetheme_theme_suggestions_table_alter(array &$suggestions, array $varia
  * Implements hook_preprocess_HOOK().
  */
 function wetheme_preprocess_table__webform_submission_table(&$variables) {
-  if (isset($variables['rows'])) {
+  $webform_submission = null;
+  $webform_submission_id = \Drupal::routeMatch()->getParameter('entity_id');
+  if ($webform_submission_id) {
+    $webform_submission = \Drupal::entityTypeManager()->getStorage('webform_submission')->load($webform_submission_id);
+  }
+
+  $requested_by_users = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'requested_by']);
+  $requested_by_map = [];
+  foreach ($requested_by_users as $user) {
+    $requested_by_map[$user->id()] = $user->get('field_contacts')->value;
+  }
+
+  if (isset($variables['rows']) && $webform_submission) {
     foreach ($variables['rows'] as $key => $element) {
       if (in_array($key, [
-        'current_status',
-        'accuracy_to_spec',
-        'factory',
-        'fx_rate',
-        'courier_cost_usd',
-        'shipping_date',
-        'tracking',
-        'carrier_cost_usd',
-        'total_cost_of_order',
-        'china',
-        'comments',
+        'test_results',
+        'testing_company',
+        'additional_comments'
       ])) {
         unset($variables['rows'][$key]);
         continue;
+      }
+
+      if (in_array($key, [
+        'order_date',
+        'invoice_date'
+      ])) {
+        $variables['rows'][$key]['cells'][1]['content'] = [
+          '#plain_text' => $webform_submission->getData()[$key],
+        ];
       }
       if (isset($element['cells'][1]['content']['#type']) && $element['cells'][1]['content']['#type'] === 'link') {
         $variables['rows'][$key]['cells'][1]['content'] = [
           '#plain_text' => $element['cells'][1]['content']['#title'],
         ];
       }
-      /** @var \Drupal\Core\Template\Attribute $attribute */
-      $attribute = $element['cells'][0]['attributes'];
-      $variables['rows'][$key]['cells'][0]['attributes'] = $attribute->setAttribute('style', 'padding: 8px;');
     }
 
+    $requested_by = $requested_by_map[$webform_submission->getData()['requested_by']];
+    $email = 'info@thefinebedding.com';
+
+    if ($requested_by) {
+      $email = str_replace("\r\n", "<br />", $requested_by);
+    }
+
+    $variables['rows'] = array_merge([
+      'company_name' => create_row('Company Name', 'The Fine Bedding Company OU'),
+      'address' => create_row('Address', 'Laane 10, Haljala, Laane-Virmuaa, Estonia'),
+      'postcode' => create_row('Postcode', '45301'),
+      'phone' => create_row('Phone', '+3723295680'),
+      'email' => create_row('Email', $email),
+    ], $variables['rows']);
+  }
+}
+
+function create_row($name, $value) {
+  return [
+    'cells' => [
+      [
+        'tag' => 'th',
+        'content' => $name,
+      ],
+      [
+        'tag' => 'td',
+        'content' => [
+          '#markup' => $value,
+        ],
+      ],
+    ],
+  ];
+}
+
+function wetheme_preprocess_entity_print__webform_submission(&$variables) {
+  if (isset($variables['webform_submission'])) {
+    $webform_submission = $variables['webform_submission'];
+    $term = Term::load($webform_submission->getData()['testing_company']);
+    $variables['title'] = $term->getName() . ' Labtest '. $webform_submission->getData()['order_number'];
   }
 }
 

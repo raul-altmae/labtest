@@ -9,9 +9,11 @@
  * @see https://www.drupal.org/node/2217931
  */
 
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\file\Entity\File;
+use Drupal\Core\Url;
 use Drupal\taxonomy\Entity\Term;
 use Drupal\webform\Entity\WebformSubmission;
 
@@ -21,6 +23,27 @@ use Drupal\webform\Entity\WebformSubmission;
 function general_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   $route_name = \Drupal::routeMatch()->getRouteName();
   if ($form_id === 'webform_submission_sample_request_add_form' || $form_id === 'webform_submission_sample_request_edit_form') {
+    $webform = \Drupal::routeMatch()->getParameter('webform_submission');
+    if ($webform) {
+      $form['actions']['downloadPdf'] = [
+        '#type' => 'link',
+        '#title' => 'Download PDF',
+        '#url' => Url::fromRoute('entity_print.view', ['export_type' => 'pdf', 'entity_type' => 'webform_submission', 'entity_id' => $webform->id()], ['query' => ['view_mode' => 'table']]),
+        '#button_type' => 'primary',
+        '#attributes' => [
+          'class' => ['button'],
+        ]
+      ];
+//      $form['actions']['viewPdf'] = [
+//        '#type' => 'link',
+//        '#title' => 'View PDF',
+//        '#url' => Url::fromRoute('entity_print.view.debug', ['export_type' => 'pdf', 'entity_type' => 'webform_submission', 'entity_id' => $webform->id()], ['query' => ['view_mode' => 'table']]),
+//        '#button_type' => 'primary',
+//        '#attributes' => [
+//          'class' => ['button'],
+//        ]
+//      ];
+    }
     $form['#attached']['library'][] = 'general/lab_form';
     $testing_companies = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'testing_company']);
     $testing_companies_map = [];
@@ -179,58 +202,6 @@ function general_webform_submission_insert(\Drupal\Core\Entity\EntityInterface $
   $data['order_number'] = $entity->id();
   $entity->setData($data);
   $entity->save();
-}
-
-/**
- * Implements hook_ENTITY_TYPE_presave().
- */
-function general_webform_submission_presave(EntityInterface $entity) {
-  $original_data = $entity->getOriginalData();
-  $site_settings = \Drupal::config('system.site');
-  $entity_type = 'webform_submission';
-  $view_mode = 'table';
-  $webform_submission = $entity;
-  $new_data = $entity->getData();
-  if (!empty($original_data)) {
-    /** @var WebformSubmission $webform_submission */
-    $order_number = $new_data['order_number'];
-    $changes_map = [];
-    foreach ($original_data as $field => $value) {
-      if (isset($new_data[$field]) && $new_data[$field] !== $value) {
-        $changes_map[$field] = $new_data[$field];
-      }
-    }
-    if (empty($changes_map)) {
-      return;
-    }
-    $changes_map['order_number'] = $order_number;
-    $view_builder = \Drupal::entityTypeManager()->getViewBuilder($entity_type);
-    $build = $view_builder->view($webform_submission, $view_mode);
-    $build['submission'] = $build;
-    render($build);
-    $data = $build['data'];
-    foreach ($data['#rows'] as $key => $row) {
-      if (array_key_exists($key, $changes_map)) {
-        if (in_array($key, ['current_status', 'accuracy_to_spec', 'factory', 'fx_rate', 'courier_cost_usd', 'shipping_date', 'tracking', 'carrier_cost_usd', 'total_cost_of_order', 'china', 'comments'])) {
-          $data['#rows'][$key.'_changed'] = $row;
-          unset($data['#rows'][$key]);
-        }
-      } elseif (!in_array($key, ['customer', 'product_ref'])) {
-        unset($data['#rows'][$key]);
-      }
-    }
-    if (!empty($data['#rows'])) {
-      $body = render($data);
-      $replacedBody = str_replace('_sid_', $entity->id(), $body);
-      \Drupal::service('plugin.manager.mail')->mail('general', 'user_notification', $site_settings->get('mail'), 'en', ['body' => trim($replacedBody), 'subject' => "Sample request $order_number has been changed"]);
-    }
-  } else if ($new_data['order_number'] === $entity->id()) {
-    $view_builder = \Drupal::entityTypeManager()->getViewBuilder($entity_type);
-    $build = $view_builder->view($webform_submission, $view_mode);
-    $body = render($build);
-    $replacedBody = str_replace('_sid_', $entity->id(), $body);
-    \Drupal::service('plugin.manager.mail')->mail('general', 'user_notification', $site_settings->get('mail'), 'en', ['body' => trim($replacedBody), 'subject' => "Sample request"]);
-  }
 }
 
 /**
