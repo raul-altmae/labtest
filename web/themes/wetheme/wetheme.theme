@@ -121,7 +121,6 @@ function wetheme_preprocess_table__webform_submission_table(&$variables) {
       'phone' => create_row('Phone', '+3723295680'),
       'email' => create_row('Email', $email),
     ], $variables['rows']);
-    dump($variables['rows']);
   }
 }
 
