@@ -28,19 +28,11 @@ function general_form_alter(&$form, FormStateInterface $form_state, $form_id) {
       $form['actions']['downloadPdf'] = [
         '#type' => 'link',
         '#title' => 'Download PDF',
-        '#url' => Url::fromRoute('entity_print.view', ['export_type' => 'pdf', 'entity_type' => 'webform_submission', 'entity_id' => $webform->id()], ['query' => ['view_mode' => 'table']]),
-        '#button_type' => 'primary',
-        '#attributes' => [
-          'class' => ['button'],
-        ]
-      ];
-      $form['actions']['viewPdf'] = [
-        '#type' => 'link',
-        '#title' => 'View PDF',
         '#url' => Url::fromRoute('entity_print.view.debug', ['export_type' => 'pdf', 'entity_type' => 'webform_submission', 'entity_id' => $webform->id()], ['query' => ['view_mode' => 'table']]),
         '#button_type' => 'primary',
         '#attributes' => [
           'class' => ['button'],
+          '_target' => '_blank',
         ]
       ];
     }
