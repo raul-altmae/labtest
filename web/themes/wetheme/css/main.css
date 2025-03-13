@@ -241,3 +241,8 @@ td.views-field-webform-submission-value-37, th.views-field-webform-submission-va
   min-width: 250px;
   max-width: 250px;
 }
+.webform-submission-table tr {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  padding: 0.1em 0.6em;
+}

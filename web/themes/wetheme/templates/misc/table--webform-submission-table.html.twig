@@ -92,7 +92,8 @@
               not no_striping ? cycle(['odd', 'even'], loop.index0),
             ]
           %}
-          <tr>
+          <tr style="border-top: 1px solid black;
+  border-bottom: 1px solid black; padding: 0.1em 0.6em;">
             {% for cell in row.cells %}
               <{{ cell.tag }}{{ cell.attributes }}>
                 {{- cell.content -}}
