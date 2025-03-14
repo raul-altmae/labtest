@@ -107,7 +107,9 @@ function wetheme_preprocess_table__webform_submission_table(&$variables) {
       }
     }
 
-    $requested_by = $requested_by_map[$webform_submission->getData()['requested_by']];
+    if (isset($webform_submission->getData()['requested_by'])) {
+      $requested_by = $requested_by_map[$webform_submission->getData()['requested_by']];
+    }
     $email = 'info@thefinebedding.com';
 
     if ($requested_by) {
