@@ -86,7 +86,17 @@ function wetheme_preprocess_table__webform_submission_table(&$variables) {
         'component_2',
         'component_3',
         'component_4',
-        'component_5'
+        'component_5',
+        'test_failed',
+        'test_report_date',
+        'test_result_1',
+        'test_result_2',
+        'test_result_3',
+        'test_result_4',
+        'required_date_expiry',
+        'testing_cost',
+        'cost_currency',
+        'invoice_date',
       ])) {
         unset($variables['rows'][$key]);
         continue;
@@ -127,7 +137,7 @@ function wetheme_preprocess_table__webform_submission_table(&$variables) {
 }
 
 function create_component($row_index, $variables) {
-  return $row_index.'. '. $variables['rows']['component_'.$row_index]['cells'][1]['content']['#plain_text']. ' '. $variables['rows']['note_'.$row_index]['cells'][1]['content']['#plain_text']. ' '. $variables['rows']['material_'.$row_index]['cells'][1]['content']['#plain_text'];
+  return $row_index.'. '. $variables['rows']['component_'.$row_index]['cells'][1]['content']['#title']. ' '. $variables['rows']['note_'.$row_index]['cells'][1]['content']['#plain_text']. ' '. $variables['rows']['material_'.$row_index]['cells'][1]['content']['#title'];
 }
 
 function create_row($name, $value) {
