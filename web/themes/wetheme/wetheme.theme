@@ -179,31 +179,10 @@ function _sample_request_terms() {
  * Implements hook_preprocess_HOOK().
  */
 function wetheme_preprocess_views_view__submissions(&$variables) {
-  $empty_filter = [
-    "combine" => "",
-    "webform_submission_value" => "",
-    "webform_submission_value_1" => "All",
-    "webform_submission_value_2" => "",
-    "webform_submission_value_3" => "All",
-    "webform_submission_value_16" => "All",
-    "webform_submission_value_4" => "All",
-    "webform_submission_value_5" => "All",
-    "webform_submission_value_6" => "",
-    "webform_submission_value_7" => "All",
-    "webform_submission_value_8" => "All",
-    "webform_submission_value_9" => "All",
-    "webform_submission_value_10" => "All",
-    "webform_submission_value_11" => "All",
-    "webform_submission_value_12" => "All",
-    "webform_submission_value_13" => "",
-    "webform_submission_value_14" => "All",
-    "webform_submission_value_15" => "All",
-  ];
   $query = \Drupal::request()->query->all();
   if (isset($query['page'])) {
     unset($query['page']);
   }
-
   foreach($variables['exposed'] as $key => $value) {
     if (isset($value['#title_display'])) {
       $variables['exposed'][$key]['#title_display'] = 'before';
@@ -213,7 +192,6 @@ function wetheme_preprocess_views_view__submissions(&$variables) {
   $variables['exposed'] = [
     "#type" => "details",
     "#title" => t('Filters'),
-    '#open' => $empty_filter !== $query && !empty($query),
     "#attributes" => ['class' => ['container-inline']],
     'exposed' => $variables['exposed'],
   ];
