@@ -187,6 +187,9 @@ function wetheme_preprocess_views_view__submissions(&$variables) {
     if (isset($value['#title_display'])) {
       $variables['exposed'][$key]['#title_display'] = 'before';
     }
+    if (isset($value["#attributes"]['style'])) {
+      unset($variables['exposed'][$key]["#attributes"]['style']);
+    }
   }
   $variables['exposed'] = [
     "#type" => "details",
