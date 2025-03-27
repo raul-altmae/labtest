@@ -203,6 +203,13 @@ function wetheme_preprocess_views_view__submissions(&$variables) {
   if (isset($query['page'])) {
     unset($query['page']);
   }
+
+  foreach($variables['exposed'] as $key => $value) {
+    if (isset($value['#title_display'])) {
+      $variables['exposed'][$key]['#title_display'] = 'before';
+    }
+  }
+  dump($variables['exposed']);
   $variables['exposed'] = [
     "#type" => "details",
     "#title" => t('Filters'),
