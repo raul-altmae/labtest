@@ -188,7 +188,6 @@ function wetheme_preprocess_views_view__submissions(&$variables) {
       $variables['exposed'][$key]['#title_display'] = 'before';
     }
   }
-  dump($variables['exposed']);
   $variables['exposed'] = [
     "#type" => "details",
     "#title" => t('Filters'),
