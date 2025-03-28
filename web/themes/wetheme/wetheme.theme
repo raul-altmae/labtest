@@ -62,7 +62,9 @@ function wetheme_preprocess_table__webform_submission_table(&$variables) {
 
   $requested_by_users = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'requested_by']);
   $requested_by_map = [];
-  $variables['rows']['order_number'] = create_row('Reg No', $variables['rows']['order_number']['cells'][1]['content']['#plain_text']. ' '. $variables['rows']['reason_for_test']['cells'][1]['content']['#title']);
+  if (isset($variables['rows']['order_number']) && $variables['rows']['order_number']['cells'][1]['content']['#plain_text'] && $variables['rows']['reason_for_test']['cells'][1]['content']['#title']) {
+    $variables['rows']['order_number'] = create_row('Reg No', $variables['rows']['order_number']['cells'][1]['content']['#plain_text']. ' '. $variables['rows']['reason_for_test']['cells'][1]['content']['#title']);
+  }
 
   $variables['rows']['component_1'] = create_row('Components', create_component(1, $variables). '<br/>'. create_component(2, $variables). '<br/>'. create_component(3, $variables). '<br/>'. create_component(4, $variables). '<br/>'. create_component(5, $variables));
   foreach ($requested_by_users as $user) {
